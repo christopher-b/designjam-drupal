@@ -1,0 +1,37 @@
+.toolbox-term {
+  .page-header-wrapper { background-color: $orange; }
+  .page-header {
+    color: $white;
+    h1 {
+      border-bottom: thick solid $white;
+      display: inline-block;
+    }
+    p { font-size: 1.25em; }
+  }
+  .topic {
+    background-color: $off-white;
+    border-bottom: thin solid $grey-x-light;
+    margin-bottom: $pad-double;
+
+    h2 {
+      padding: $pad-half;
+      color: $white;
+      background-color: $off-black;
+      font-family: $font;
+    }
+    h3 {
+      color: $orange;
+      margin-bottom: 0;
+    }
+    a:link {
+      color: $orange;
+    }
+    // .description {}
+
+    .topic-content {
+      padding: 0 $pad $pad $pad;
+    }
+    .feature { padding-right: $pad; }
+
+  }
+}

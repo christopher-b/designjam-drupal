@@ -1,0 +1,16 @@
+.region-page-bottom {
+  ul {
+    list-style: none;
+    padding:0.5em 0;
+    position: relative;
+    top:-1em;
+    text-align: center;
+    img { height: 90px; }
+    li {
+      margin-right:1vw;
+      display: inline;
+      position: relative;
+      top: 1.25em;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+.hero {
+  font-family: "MuseoSlab";
+  font-size: 1.5em;
+  font-weight: bold;
+  background-image:url('../img/bg-hero.jpg');
+  background-repeat: no-repeat;
+  background-size:100%;
+  background-size:cover;
+  text-align: center;
+  p { padding: $pad; }
+  .logos {
+    text-align: center;
+    margin-top: 1em;
+    a { display: inline-block; }
+    .slab {
+      width:10%;
+      position: relative;
+      top:-1.1em;
+      margin-right: 2em;
+    }
+    .ocadu { width: 20%; }
+  }
+
+  @include media-medium {
+    font-size: 2.5em;
+    p { padding-top: $pad-double; }
+  }
+}

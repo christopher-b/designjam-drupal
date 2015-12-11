@@ -1,0 +1,25 @@
+.toolbox.highlight {
+  color: $white;
+  background-image: url("../img/orange-grid.png");
+  background-color: #d26305;
+  background-size: 100%;
+  padding-bottom: $pad-double;
+
+  .links { margin-bottom: $space; }
+  @include media-large {
+    .description, .media {
+      width: 48%;
+      float: left;
+    }
+    .description { margin-right: 3%; }
+  }
+}
+.toolbox-title {
+  img {
+    height: $space-double;
+    display: inline-block;
+    position: relative;
+    top:  .5em;
+    left: .5em;
+  }
+}

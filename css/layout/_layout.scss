@@ -1,0 +1,25 @@
+.wrapper { }
+.container {
+  max-width: 992px;
+  position: relative;
+  margin:0 auto;
+  padding:0 $pad;
+  // .item-list ul li { margin: 0; }
+}
+
+.site-header,
+.site-footer,
+.page-content,
+.page-header,
+.sponsors { @extend .container; }
+.page-header, .page-content { padding: $pad-double 0; }
+.page-content-wrapper, .page-header-wrapper { padding: 0 $pad; }
+
+.highlight {
+  padding: $pad-double 0;
+  @include media-medium {
+    h2 { font-size: 2rem;   }
+    h3 { font-size: 1.75rem;   }
+    p  { font-size: 1.5rem; }
+  }
+}

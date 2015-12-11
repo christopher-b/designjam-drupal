@@ -1,0 +1,88 @@
+// Measurements apply to content+padding+border
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: $white;
+  font-family: $font;
+
+  // Don't scale text on mobile
+  -webkit-text-size-adjust: 100%;
+     -moz-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: $space;
+}
+h1,h2,h3,h4,h5,h6 { margin-top: 0; }
+a {
+  color: $white;
+  text-decoration: none;
+  outline: 0;
+  &:hover, &:focus {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
+blockquote {
+  font-style:italic;
+  border-left: 1px solid $grey-light;
+  color: $grey-light;
+  padding-left: $pad;
+  margin-bottom: $space;
+}
+
+hr {
+  border: 0;
+  height: 2px;
+  background: $grey-light;
+  margin: $space-double 0;
+}
+
+abbr {
+  border-bottom: 1px dotted $grey-light;
+  cursor: help;
+}
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+dl {
+  overflow: hidden;
+  margin: 0 0 $space;
+  dt { font-weight: bold; }
+  dd { margin-left: 0;    }
+}
+
+iframe { margin-bottom: $space; }
+
+figure {
+  margin-bottom: $space;
+  img { margin-bottom: $space-half; }
+}
+figcaption { font-style: italic; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 1px solid $grey-light;
+  width: 100%;
+  th {
+    text-align: left;
+    border: 1px solid $grey-light;
+    padding: 0.2em;
+  }
+  td {
+    border: 1px solid $grey-light;
+    padding: 0.2em;
+  }
+}

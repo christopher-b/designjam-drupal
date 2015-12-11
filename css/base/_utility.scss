@@ -1,0 +1,89 @@
+.clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+  }
+  &:after { clear: both; }
+}
+
+.clear { clear:both; }
+
+// Completely remove from the flow and screen readers.
+.is-hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Completely remove from the flow but leave available to screen readers. */
+.is-vishidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+/* Layout */
+.center {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+/* Floats */
+.right {
+  float: right;
+  padding: 0 0 $pad $pad;
+}
+
+.left {
+  float: left;
+  padding: 0 $pad $pad 0;
+}
+
+/* Text-Align */
+.align-right  { text-align: right;  }
+.align-center { text-align: center; }
+.align-left   { text-align: left;   }
+
+/* Display Classes */
+// .hide-small {
+// @include media(small) { display: none !important; }
+// }
+//
+// .hide-med {
+// @include media(medium) { display: none !important; }
+// }
+//
+// .hide-large {
+// @include media(large) { display: none !important; }
+// }
+
+//States
+.valid          { color: $valid; }
+.error          { color: $error; }
+.warning        { color: $warning; }
+.information    { color: $information; }
+
+
+@mixin sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}

@@ -1,0 +1,5 @@
+.page.person {
+  a {
+    &:link,&:active,&:hover,&:visited { color: $black;}
+  }
+}

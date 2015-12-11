@@ -1,0 +1,26 @@
+.site-header-wrapper {
+  background: $grey-dark;
+  font-weight: bold;
+  overflow: hidden;
+  z-index: 9999;
+  .logo {
+    position: relative;
+    float:left;
+    width: 60%;
+    padding: $pad;
+    padding-right: 0;
+    max-width: 415px;
+    @include media-large { top: 1.75em; }
+  }
+  // Full-width
+  @include media-min($bp-navigation) {
+    height: 132px;
+    overflow: visible;
+  }
+  // Account for Drupal admin menu
+  body.logged_in .page-wrapper & {
+    position: fixed;
+    width:100%;
+    top:64px;
+  }
+}
