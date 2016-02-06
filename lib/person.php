@@ -16,18 +16,18 @@ class Person {
     $this->description = $term->description;
 
     if(!empty($term->field_portrait)) {
-      $this->portrait = $term->field_portrait['und'][0];
+      @$this->portrait = $term->field_portrait['und'][0];
       // $this->portrait_file = file_load($this->portrait_data);
     }
 
     if(!empty($term->field_twitter)) {
-      $this->twitter = $term->field_twitter['und'][0]['value'];
+      @$this->twitter = $term->field_twitter['und'][0]['value'];
     }
     if(!empty($term->field_affiliation)) {
-      $this->affiliation = $term->field_affiliation['und'][0]['value'];
+      @$this->affiliation = $term->field_affiliation['und'][0]['value'];
     }
     if(!empty($term->field_location)) {
-      $this->location = $term->field_location['und'][0]['value'];
+      @$this->location = $term->field_location['und'][0]['value'];
     }
   }
 
