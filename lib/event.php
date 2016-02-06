@@ -52,16 +52,16 @@ class Event {
   function __construct($entity) {
     // print_r($entity);die;
     $this->node_id        = $entity->nid;
+    $this->path           = 'node/'.$this->node_id;
     $this->title          = $entity->title;
-    $this->start_date     = $entity->field_date['und'][0]['value'];
-    $this->end_date       = $entity->field_date['und'][0]['value2'];
     $this->description    = $entity->body['und'][0]['value'];
     $this->summary        = $entity->body['und'][0]['summary'];
-    $this->location       = $entity->field_location['und'][0]['value'];
-    $this->location_name  = $entity->field_location_name['und'][0]['value'];
-    $this->eventbrite_id  = $entity->field_eventbrite_id['und'][0]['value'];
-    $this->eventbrite_url = 'https://www.eventbrite.ca/e/'.$this->eventbrite_id;
-    $this->path           = 'node/'.$this->node_id;
+    @$this->start_date     = $entity->field_date['und'][0]['value'];
+    @$this->end_date       = $entity->field_date['und'][0]['value2'];
+    @$this->location       = $entity->field_location['und'][0]['value'];
+    @$this->location_name  = $entity->field_location_name['und'][0]['value'];
+    @$this->eventbrite_id  = $entity->field_eventbrite_id['und'][0]['value'];
+    @$this->eventbrite_url = 'https://www.eventbrite.ca/e/'.$this->eventbrite_id;
   }
 
 }
