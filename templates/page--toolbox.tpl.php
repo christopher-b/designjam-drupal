@@ -94,7 +94,6 @@ $themes = taxonomy_get_tree($toolbox_taxonomy->vid, 0, $max_depth = 1, true);
       <?php if (!empty($tabs)){ print render($tabs); } ?>
 
       <div class="videos">
-        -- Videos go here --
       </div>
 
       <p class="cta">What do you aspire to learn?</p>
