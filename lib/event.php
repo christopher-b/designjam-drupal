@@ -51,11 +51,11 @@ class Event {
 
   function __construct($entity) {
     // print_r($entity);die;
-    $this->node_id        = $entity->nid;
-    $this->path           = 'node/'.$this->node_id;
-    $this->title          = $entity->title;
-    $this->description    = $entity->body['und'][0]['value'];
-    $this->summary        = $entity->body['und'][0]['summary'];
+    $this->node_id         = $entity->nid;
+    $this->path            = 'node/'.$this->node_id;
+    $this->title           = $entity->title;
+    $this->description     = $entity->body['und'][0]['value'];
+    $this->summary         = $entity->body['und'][0]['summary'];
     @$this->start_date     = $entity->field_date['und'][0]['value'];
     @$this->end_date       = $entity->field_date['und'][0]['value2'];
     @$this->location       = $entity->field_location['und'][0]['value'];

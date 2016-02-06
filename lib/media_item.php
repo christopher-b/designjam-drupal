@@ -19,11 +19,11 @@ class MediaItem {
     if(is_numeric($node)) { $node = node_load($node); }
     $this->node = $node;
 
-    $this->vid              = $node->vid;
-    $this->title            = $node->title;
-    $this->url              = @$node->field_url['und'][0]['value'];
-    $this->copyright_holder = @$node->field_copyright_holder['und'][0]['value'];
-    $this->usage_rights     = @$node->field_usage_rights['und'][0]['value'];
+    $this->vid               = $node->vid;
+    $this->title             = $node->title;
+    @$this->url              = $node->field_url['und'][0]['value'];
+    @$this->copyright_holder = $node->field_copyright_holder['und'][0]['value'];
+    @$this->usage_rights     = $node->field_usage_rights['und'][0]['value'];
 
     if(!empty($node->field_creator)){
       foreach($node->field_creator['und'] as $creator) {
