@@ -1,0 +1,69 @@
+.highlight.mailing-list {
+  text-align: center;
+  .mc-embedded-subscribe-form { }
+  .mce_inline_error {
+    margin:$space;
+    width: 50%;
+    margin: auto;
+  }
+  .button {
+    margin: $space;
+  }
+}
+
+
+/*
+### Base
+ - #mc_embed_signup
+DIV Element
+This DIV element wraps around the form. Use this selector in front of the other selectors below to ensure styles get applied. (e.g. #mc_embed_signup .mc-field-group)
+ - #mc-embedded-subscribe-form
+FORM Element
+Use this selector to set styles on the main form element. Useful for increasing padding around form elements.
+ - div.mc-field-group
+Field Group
+Wrapper for each label and input combination on forms with more than one field. Use this to control horizontal and vertical spacing (padding) between inputs. Some .mc-field-group elements also have a .size1of2 class which makes them half size to fit 2 per row.
+ - div.mc-field-group label
+Labels
+Default label selector. Use this to style most form labels.
+ - div.mc-field-group input
+Input(s)
+Default input selector. Use this to style most form inputs.
+ - div.mc-field-group select
+Drop-down Menus
+Default select (drop-down) selector. Use this to style all drop-down menus.
+ - input.button
+Submit Button
+Use this selector to style the submit button.
+
+
+### Required Fields
+ - .indicates-required
+DIV Element
+Container for "*indicates required" message at top of form.
+ - .mc-field-group .asterisk
+SPAN Element
+Container for "*" on labels that are required.
+
+
+### Response Messages (Ajax)
+ - #mce-responses
+DIV Element
+Container for error responses.
+ - div.response
+DIV Element
+Default response message container. This will need to be set to display:none; by default so they don't show as empty styled boxes. The JS will write in an inline style display:block to show them when needed.
+ - div.mce_inline_error
+DIV Element
+Div with error message place below inputs that have a problem.
+ - input.mce_inline_error
+Input(s)
+The .mce_inline_error class is also added to inputs to add a red border.
+ - #mce-error-response
+Error Message
+Container for non-input-specific error message.
+ - #mce-success-response
+Error Message
+Container for success message.
+
+*/
