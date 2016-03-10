@@ -1028,6 +1028,10 @@ body.drupal.logged_in {
   color: #ffffff;
   font-size: 1.25em;
   text-align: center; }
+  .site-footer a:link {
+    color: #ffffff !important; }
+  .site-footer a:visited {
+    color: #ffffff !important; }
   .site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6 {
     font-family: "MuseoSans", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
     font-weight: 500;
@@ -1106,8 +1110,12 @@ body.drupal.logged_in {
     list-style-type: none !important;
     list-style-image: none !important;
     white-space: nowrap; }
+  .primary-nav li a:link {
+    color: #ffffff !important; }
+  .primary-nav li a:visited {
+    color: #ffffff !important; }
   .primary-nav li a.active {
-    color: #ffffff; }
+    color: #ffffff !important; }
   @media only screen and (min-width: 880px) {
     .primary-nav {
       clear: none;

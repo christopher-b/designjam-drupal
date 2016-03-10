@@ -7,7 +7,9 @@
     list-style-image: none !important;
     white-space: nowrap;
   }
-  li a.active { color: $white; }
+  li a:link    { color: $white !important; }
+  li a:visited { color: $white !important; }
+  li a.active  { color: $white !important; }
   @include transition(all, 0.4s, ease-out);
   @include media-min($bp-navigation) {
     clear: none;
