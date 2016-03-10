@@ -9,8 +9,10 @@
   <div class="container">
     <?php print render($title_prefix); ?>
     <h2<?php print $title_attributes; ?> class="events-title">
-      <?php print $block->subject; ?>
-      <img src="<?php print path_to_theme();?>/img/icon_workshops.png" alt="Workshops icon" />
+      <a href="/workshops">
+        <?php print $block->subject; ?>
+        <img src="<?php print path_to_theme();?>/img/icon_workshops.png" alt="Workshops icon" />
+      </a>
     </h2>
     <?php print render($title_suffix); ?>
     <?php print $content ?>
