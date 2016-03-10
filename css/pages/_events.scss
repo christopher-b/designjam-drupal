@@ -33,6 +33,8 @@ body.node-type-event, body.page-workshops {
     padding-bottom: $pad;
     margin-bottom: $pad;
   }
+  a:link { color: $off-black; }
+  a:visited { color: $off-black; }
 }
 
 body.page-workshops {
