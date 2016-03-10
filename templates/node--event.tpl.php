@@ -92,7 +92,7 @@
       <?php endif; ?>
       <?php echo $event->description;?>
     </div>
-    <?php if(!empty($event->peopl)): ?>
+    <?php if(!empty($event->people)): ?>
       <div class="people-list col-1-4">
         <h2>Facilitators</h2>
         <?php foreach($event->people as $person):?>
