@@ -37,16 +37,16 @@
     <?php //print $event->description;?>
     <?php print $event->summary;?>
   </div>
-  <div class="event-card-register">
+  <div class="event-card-register ">
     <?php if($event->isPast()) : ?>
       <?php // Do nothing ?>
     <?php elseif(isset($event->eventbrite_id)) : ?>
       <?php $url = 'https://www.eventbrite.ca/e/'.$event->eventbrite_id; ?>
-      <a href="<?php echo $url;?>" target="_blank">
+      <a href="<?php echo $url;?>" target="_blank" class="button green">
         Register at Eventbrite
       </a>
     <?php else: ?>
-      <span class="button green">Coming soon</a>
+      <span>Coming soon</a>
     <?php endif;?>
   </div>
 </div>

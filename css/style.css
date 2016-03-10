@@ -779,7 +779,7 @@ body.drupal.logged_in {
   .breadcrumbs li:last-child:after {
     content: none; }
 
-.button, .form-submit, .event-card-register a {
+.button, .form-submit {
   display: inline-block;
   padding: 1em 1.5em;
   border: 0;
@@ -789,11 +789,11 @@ body.drupal.logged_in {
   -webkit-box-shadow: 3px 4px 0px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 3px 4px 0px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 3px 4px 0px 0px rgba(0, 0, 0, 0.25); }
-  .button.green, .green.form-submit, .event-card-register a.green {
+  .button.green, .green.form-submit {
     background-color: #40ae49; }
-  .button.blue, .form-submit, .event-card-register a.blue, .event-card-register a.form-submit {
+  .button.blue, .form-submit {
     background-color: #1669a2; }
-  .button.yellow, .yellow.form-submit, .event-card-register a.yellow {
+  .button.yellow, .yellow.form-submit {
     background-color: #fbc101; }
 
 /* Single event listing */
@@ -858,11 +858,8 @@ body.drupal.logged_in {
       position: absolute;
       bottom: 3em;
       right: 1em; } }
-  .event-card-register a {
-    background-color: #40ae49; }
-
-.button, .form-submit, .event-card-register a {
-  color: #ffffff; }
+  .event-card-register a:link, .event-card-register a:visited {
+    color: #ffffff !important; }
 
 /* DJ Icons */
 /* Scope icons to .page to prevent toolbar conflicts */
@@ -1295,10 +1292,10 @@ body.drupal.logged_in {
   background-image: url("../img/blue-paper.png");
   background-color: #1669a2;
   color: #ffffff; }
-  .highlight.bigtent .button, .highlight.bigtent .form-submit, .highlight.bigtent .event-card-register a, .event-card-register .highlight.bigtent a {
+  .highlight.bigtent .button, .highlight.bigtent .form-submit {
     background-color: #fbc101;
     margin-bottom: 1em; }
-    .highlight.bigtent .button:first-child, .highlight.bigtent .form-submit:first-child, .highlight.bigtent .event-card-register a:first-child, .event-card-register .highlight.bigtent a:first-child {
+    .highlight.bigtent .button:first-child, .highlight.bigtent .form-submit:first-child {
       margin-right: 1em; }
   .highlight.bigtent .description {
     margin-bottom: 2em; }
@@ -1358,7 +1355,7 @@ body.drupal.logged_in {
     margin: 1em;
     width: 50%;
     margin: auto; }
-  .highlight.mailing-list .button, .highlight.mailing-list .form-submit, .highlight.mailing-list .event-card-register a, .event-card-register .highlight.mailing-list a {
+  .highlight.mailing-list .button, .highlight.mailing-list .form-submit {
     margin: 1em; }
 
 /*

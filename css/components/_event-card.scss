@@ -56,9 +56,6 @@
     bottom: 3em;;
     right:1em;
   }
-  a {
-    @include button;
-    background-color: $green-light;
-  }
+  a:link, a:visited { color: $white !important; }
+
 }
-.button { color: $white; }
