@@ -858,8 +858,6 @@ body.drupal.logged_in {
       position: absolute;
       bottom: 3em;
       right: 1em; } }
-  .event-card-register a:link, .event-card-register a:visited {
-    color: #ffffff !important; }
 
 /* DJ Icons */
 /* Scope icons to .page to prevent toolbar conflicts */
@@ -1025,10 +1023,6 @@ body.drupal.logged_in {
   color: #ffffff;
   font-size: 1.25em;
   text-align: center; }
-  .site-footer a:link {
-    color: #ffffff !important; }
-  .site-footer a:visited {
-    color: #ffffff !important; }
   .site-footer h1, .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5, .site-footer h6 {
     font-family: "MuseoSans", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
     font-weight: 500;
@@ -1107,10 +1101,6 @@ body.drupal.logged_in {
     list-style-type: none !important;
     list-style-image: none !important;
     white-space: nowrap; }
-  .primary-nav li a:link {
-    color: #ffffff !important; }
-  .primary-nav li a:visited {
-    color: #ffffff !important; }
   .primary-nav li a.active {
     color: #ffffff !important; }
   @media only screen and (min-width: 880px) {
@@ -1413,6 +1403,10 @@ Error Message
 Container for success message.
 
 */
+body.node-type-event .breadcrumbs a:link, body.page-workshops .breadcrumbs a:link {
+  color: #ffffff; }
+body.node-type-event .breadcrumbs a:visited, body.page-workshops .breadcrumbs a:visited {
+  color: #ffffff; }
 body.node-type-event .page-header, body.page-workshops .page-header {
   padding: 0; }
   body.node-type-event .page-header .page-description, body.page-workshops .page-header .page-description {
@@ -1439,17 +1433,17 @@ body.node-type-event .event-description, body.page-workshops .event-description 
   margin-bottom: 1em; }
 body.node-type-event .node-event, body.page-workshops .node-event {
   background-color: #ffffff;
-  color: #333333;
-  padding: 1em; }
+  padding: 1em;
+  color: #333333; }
+  body.node-type-event .node-event a:link, body.page-workshops .node-event a:link {
+    color: #333333; }
+  body.node-type-event .node-event a:visited, body.page-workshops .node-event a:visited {
+    color: #333333; }
 body.node-type-event .summary, body.page-workshops .summary {
   color: #40ae49;
   border-bottom: 2px solid #40ae49;
   padding-bottom: 1em;
   margin-bottom: 1em; }
-body.node-type-event a:link, body.page-workshops a:link {
-  color: #333333; }
-body.node-type-event a:visited, body.page-workshops a:visited {
-  color: #333333; }
 
 body.page-workshops h1 {
   border-bottom: thick solid #ffffff;

@@ -1,4 +1,8 @@
 body.node-type-event, body.page-workshops {
+  .breadcrumbs {
+    a:link    { color: $white; }
+    a:visited { color: $white; }
+  }
   .page-content { }
   .page-header {
     padding: 0;
@@ -24,8 +28,10 @@ body.node-type-event, body.page-workshops {
   .event-description { margin-bottom: $pad; }
   .node-event {
     background-color: $white;
-    color:$off-black;
     padding: $pad;
+    color:$off-black;
+    a:link { color: $off-black; }
+    a:visited { color: $off-black; }
   }
   .summary {
     color: $green-light;
@@ -33,8 +39,6 @@ body.node-type-event, body.page-workshops {
     padding-bottom: $pad;
     margin-bottom: $pad;
   }
-  a:link { color: $off-black; }
-  a:visited { color: $off-black; }
 }
 
 body.page-workshops {
