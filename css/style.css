@@ -1560,7 +1560,7 @@ body.page-workshops .view-content {
   .toolbox-term .topic h3 {
     color: #d26305;
     margin-bottom: 0; }
-  .toolbox-term .topic a:link {
+  .toolbox-term .topic a:link, .toolbox-term .topic a:visited {
     color: #d26305; }
   .toolbox-term .topic .topic-content {
     padding: 0 1em 1em 1em; }
