@@ -1241,7 +1241,7 @@ body.drupal.logged_in {
     font-family: "MuseoSans", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
     font-size: 1.25em;
     line-height: 3em; }
-  .cta-section.events {
+  .cta-section.events-cta {
     margin-top: 1em; }
   .cta-section p {
     display: none; }
@@ -1276,9 +1276,9 @@ body.drupal.logged_in {
         text-decoration: none; }
       .cta-section.bigtent .image img {
         max-width: 6em; }
-      .cta-section.events {
+      .cta-section.events-cat {
         margin-top: 0; }
-        .cta-section.events .image img {
+        .cta-section.events-cat .image img {
           max-width: 7.7em; }
       .cta-section.toolbox .image img {
         max-width: 4.4em; } }

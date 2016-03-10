@@ -85,22 +85,24 @@
 
   <div class="content"<?php print $content_attributes; ?>>
     <div class="col-3-4 event-description">
-      <?php if(isset($event->summary)) : ?>
+      <?php if(isset($event->summary) && !empty($event->summary)) : ?>
         <div class="summary">
           <?php echo $event->summary;?>
         </div>
       <?php endif; ?>
       <?php echo $event->description;?>
     </div>
-    <div class="people-list col-1-4">
-      <h2>Facilitators</h2>
-      <?php foreach($event->people as $person):?>
-        <div class="person">
-          <?php echo $person->render_portrait(); ?>
-          <p><a href="<?php echo $person->url();?>"><?php echo $person->name; ?></a></p>
-        </div>
-      <?php endforeach;?>
-    </div>
+    <?php if(!empty($event->peopl)): ?>
+      <div class="people-list col-1-4">
+        <h2>Facilitators</h2>
+        <?php foreach($event->people as $person):?>
+          <div class="person">
+            <?php echo $person->render_portrait(); ?>
+            <p><a href="<?php echo $person->url();?>"><?php echo $person->name; ?></a></p>
+          </div>
+        <?php endforeach;?>
+      </div>
+    <?php endif; ?>
 
     <?php
       // We hide the comments and links now so that we can render them later.

@@ -28,7 +28,7 @@
         <p>Attend our all day workshop in Toronto, March 28th. Hear from industry leaders and learn from experienced mentors.</p>
       </div>
 
-      <div class="events cta-section col-1-3">
+      <div class="events-cta cta-section col-1-3">
         <a href="#workshops">
           <div class="image">
             <img src="<?php print path_to_theme();?>/img/icon_workshops.png" />

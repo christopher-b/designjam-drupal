@@ -39,7 +39,7 @@
     font-size: 1.25em;
     line-height: 3em;
   }
-  &.events { margin-top: $space; }
+  &.events-cta { margin-top: $space; }
 
   p { display: none; }
   .image {
@@ -75,7 +75,7 @@
     a:hover  { text-decoration: none; }
     a:active { text-decoration: none; }
     &.bigtent { .image img { max-width: 6em; } }
-    &.events  {
+    &.events-cat  {
       margin-top: 0;
       .image img { max-width: 7.7em; }
     }
