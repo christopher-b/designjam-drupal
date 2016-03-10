@@ -5,7 +5,7 @@
 ?>
 
 <a class="anchor" name="workshops" id="workshops"></a>
-<section id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> highlight clearfix"<?php print $attributes; ?>>
+<section id="<?php print $block_html_id; ?>" class="<?php print $classes; ?> highlight  clearfix"<?php print $attributes; ?>>
   <div class="container">
     <?php print render($title_prefix); ?>
     <h2<?php print $title_attributes; ?> class="events-title">

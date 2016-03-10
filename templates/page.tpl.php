@@ -66,13 +66,11 @@
  *
  * @ingroup themeable
  */
+ // phpinfo();die;
 ?>
-
 <?php include './'. path_to_theme() .'/templates/header.tpl.php';?>
-
   <div class="container">
     <a id="main-content"></a>
-
     <?php if (!empty($messages)): ?>
       <div class="row messages">
         <?php print $messages; ?>
@@ -88,21 +86,19 @@
     <?php endif; ?>
   </div>
 
-  <div>
-    <section class="page-content">
-      <?php if (!empty($title)): ?>
-        <?php print render($title_prefix); ?>
-          <div class="page-header">
-            <h1><?php print $title; ?></h1>
-          </div>
-        <?php print render($title_suffix); ?>
-      <?php endif; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
+  <div class="page-content-wrapper">
+    <section class="page-content container">
+      <?php
+      if(isset($node)): switch ($node->type):
+        case 'event': include '_header-event-detail.php'; break;
+        default:      include '_header.php';              break;
+      endswitch;
+      else : include '_header.php'; endif;
+      ?>
 
-
-      <?php print render($page['content']); ?>
+      <div class="">
+        <?php print render($page['content']); ?>
+      </div>
     </section>
 
   </div> <!-- /.container -->

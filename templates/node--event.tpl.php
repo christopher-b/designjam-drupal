@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to display a node.
@@ -80,33 +79,39 @@
  * @ingroup themeable
  */
 ?>
+<?php $event = new Event($node);?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php print $user_picture; ?>
-
-  <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-  <?php endif; ?>
-  <?php print render($title_suffix); ?>
-
-  <?php if ($display_submitted): ?>
-    <div class="submitted">
-      <?php print $submitted; ?>
-    </div>
-  <?php endif; ?>
 
   <div class="content"<?php print $content_attributes; ?>>
+    <div class="col-3-4 event-description">
+      <?php if(isset($event->summary)) : ?>
+        <div class="summary">
+          <?php echo $event->summary;?>
+        </div>
+      <?php endif; ?>
+      <?php echo $event->description;?>
+    </div>
+    <div class="people-list col-1-4">
+      <h2>Facilitators</h2>
+      <?php foreach($event->people as $person):?>
+        <div class="person">
+          <?php echo $person->render_portrait(); ?>
+          <p><a href="<?php echo $person->url();?>"><?php echo $person->name; ?></a></p>
+        </div>
+      <?php endforeach;?>
+    </div>
+
     <?php
       // We hide the comments and links now so that we can render them later.
-      hide($content['comments']);
-      hide($content['links']);
-      print render($content);
+      // hide($content['comments']);
+      // hide($content['links']);
+      // print render($content);
     ?>
   </div>
 
-  <?php print render($content['links']); ?>
+  <?php //print render($content['links']); ?>
 
-  <?php print render($content['comments']); ?>
+  <?php //print render($content['comments']); ?>
 
 </div>

@@ -1,0 +1,50 @@
+body.node-type-event, body.page-workshops {
+  .page-content { }
+  .page-header {
+    padding: 0;
+    .page-description {
+      float: left;
+      font-size: 1.5rem;
+    }
+  }
+  .event { margin: 0; }
+  .event-header {
+    margin-top: $pad;
+    background-color:$grey-light;
+    color: $white;
+    a:link { color: $white; }
+    a:visited { color: $white; }
+  }
+  .event-header-info { padding:$pad; }
+  .event-header-image {
+    background-color: #fff;
+    height: 228px;
+  }
+  .event-card-meta { margin-bottom: $pad-double; }
+  .event-description { margin-bottom: $pad; }
+  .node-event {
+    background-color: $white;
+    color:$off-black;
+    padding: $pad;
+  }
+  .summary {
+    color: $green-light;
+    border-bottom: 2px solid $green-light;
+    padding-bottom: $pad;
+    margin-bottom: $pad;
+  }
+}
+
+body.page-workshops {
+  h1 {
+    border-bottom: thick solid $white;
+    float:left;
+    margin-right: 1.3em;
+  }
+  .view-header {
+    font-size: 1.5rem;
+  }
+  .view-content {
+    clear:both;
+  }
+}

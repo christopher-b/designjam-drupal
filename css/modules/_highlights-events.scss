@@ -1,10 +1,6 @@
 /* The Events home page section */
 .events.highlight {
   padding-bottom: $pad-double;
-  color: $white;
-  background-image: url("../img/green-paper.png");
-  background-color: $green-light;
-  background-size: 100%;
 }
 .events-title {
   img {
@@ -15,71 +11,4 @@
     left: .5rem;
   }
 }
-.events-disclaimer,
-.view-footer { font-size: .875rem; }
-
-/* Single event listing */
-.event-row {
-  position: relative;
-  margin: $space 0;
-  padding: $pad;
-  border-bottom: 4px solid $green-dark;
-  color: $black;
-  background-color: $white;
-  font-size: 1rem;
-  p { font-size: 1rem; }
-  @include media-small {
-    .event-row-description { display: none; }
-  }
-  @include media-medium {
-    .event-row-meta { margin-bottom: $space; }
-    .event-row-description {
-      width: 66%;
-      float:left;
-    }
-  }
-  // @include media-large {
-  //   margin: $space 0;
-  // }
-  .event-row-register {
-    @extend .align-center;
-    margin-top: $space;
-    @include media-medium {
-      margin-top: 0;
-      width: 33%;
-      float: right;
-      padding:0;
-      position: absolute;
-      bottom: 3em;;
-      right:1em;
-    }
-  }
-}
-.event-row-title {
-  margin-bottom: $pad-half;
-  font-family: $font;
-  font-size: 1.5rem;
-}
-.event-row-meta {
-  font-family: $font-alternate;
-  font-size: 1.25em;
-  color: $grey-light;
-  span {
-    margin-right: 0.5em;
-    display: inline-block;
-    .icon { margin-right: $space-half; }
-    @include media-medium {
-      .icon { margin-right: .1em; }
-    }
-  }
-}
-.event-row-description {
-  font-weight: 500;
-  color: $grey-dark;
-}
-.event-row-register {
-  a {
-    @include button;
-    background-color: $green-light;
-  }
-}
+.events-disclaimer, .view-footer { font-size: .875rem; }

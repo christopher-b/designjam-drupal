@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+
+    <link rel="stylesheet" href="{{ cssRoot }}/style.css?{{ cacheBuster }}" media="all" />
+    <link rel="stylesheet" href="{{ cssRoot }}/styleguide.css?{{ cacheBuster }}" media="all" />
+
+    <script src="http://designjam.dev/sites/all/modules/jquery_update/replace/jquery/1.10/jquery.min.js?v=1.10.2"></script>
+    <script src="{{ jsRoot }}/app.js?{{ cacheBuster }}"></script>
+
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    {% pattern-lab-head %}
+    <!-- End Pattern Lab -->
+  </head>
+  <body class="{{ bodyClass }}">

@@ -531,6 +531,11 @@ h1, h2, h3, h4, h5, h6 {
     color: #000000;
     text-decoration: underline; }
 
+.summary, .callout {
+  font-size: 1.2em;
+  font-weight: 700;
+  font-family: "MuseoSlab", Georgia, Times, "Times New Roman", serif; }
+
 /**
  * @license
  * MyFonts Webfont Build ID 2956769, 2015-01-20T13:50:45-0500
@@ -626,7 +631,7 @@ img, video, object {
 .align-right {
   text-align: right; }
 
-.align-center, .event-row .event-row-register {
+.align-center, .event-card-register {
   text-align: center; }
 
 .align-left {
@@ -659,7 +664,12 @@ body.drupal.logged_in {
 
 .tabs.primary {
   margin: 0;
-  border-bottom-color: #4f4848; }
+  border-bottom-color: #4f4848;
+  color: #000000; }
+  .tabs.primary a:link {
+    color: #000000 !important; }
+  .tabs.primary a:visited {
+    color: #000000 !important; }
   .tabs.primary li {
     position: relative;
     top: -9px; }
@@ -759,7 +769,17 @@ body.drupal.logged_in {
     .highlight p {
       font-size: 1.5rem; } }
 
-.button, .form-submit, .event-row-register a {
+.breadcrumbs {
+  font-family: "MuseoSlab", Georgia, Times, "Times New Roman", serif;
+  clear: both; }
+  .breadcrumbs li {
+    display: inline; }
+  .breadcrumbs li:after {
+    content: " / "; }
+  .breadcrumbs li:last-child:after {
+    content: none; }
+
+.button, .form-submit, .event-card-register a {
   display: inline-block;
   padding: 1em 1.5em;
   border: 0;
@@ -769,19 +789,87 @@ body.drupal.logged_in {
   -webkit-box-shadow: 3px 4px 0px 0px rgba(0, 0, 0, 0.25);
   -moz-box-shadow: 3px 4px 0px 0px rgba(0, 0, 0, 0.25);
   box-shadow: 3px 4px 0px 0px rgba(0, 0, 0, 0.25); }
-  .button.green, .green.form-submit, .event-row-register a.green {
+  .button.green, .green.form-submit, .event-card-register a.green {
     background-color: #40ae49; }
-  .button.blue, .form-submit, .event-row-register a.blue, .event-row-register a.form-submit {
+  .button.blue, .form-submit, .event-card-register a.blue, .event-card-register a.form-submit {
     background-color: #1669a2; }
-  .button.yellow, .yellow.form-submit, .event-row-register a.yellow {
+  .button.yellow, .yellow.form-submit, .event-card-register a.yellow {
     background-color: #fbc101; }
+
+/* Single event listing */
+.event-card {
+  position: relative;
+  margin: 1em 0;
+  padding: 1em;
+  border-bottom: 4px solid #266628;
+  color: #4f4848;
+  background-color: #ffffff;
+  font-size: 1rem; }
+  .event-card p {
+    font-size: 1rem; }
+  .event-card a:link {
+    color: #4f4848; }
+  .event-card a:visited {
+    color: #4f4848; }
+  @media (max-width: 767px) {
+    .event-card .event-card-description {
+      display: none; } }
+  @media (min-width: 768px) {
+    .event-card .event-card-meta {
+      margin-bottom: 1em; }
+    .event-card .event-card-description {
+      width: 66%;
+      float: left; } }
+
+.event-card-title {
+  margin-bottom: 0.5em;
+  font-family: "MuseoSans", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-size: 1.5rem; }
+  .event-card-title a:link {
+    color: #4f4848 !important;
+    text-decoration: none; }
+  .event-card-title a:visited {
+    color: #4f4848 !important;
+    text-decoration: none; }
+
+.event-card-meta {
+  font-family: "TabletGothicCondensed", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-size: 1.25em; }
+  .event-card-meta span {
+    margin-right: 0.5em;
+    display: inline-block; }
+    .event-card-meta span .icon {
+      margin-right: 0.5em; }
+    @media (min-width: 768px) {
+      .event-card-meta span .icon {
+        margin-right: .1em; } }
+
+.event-card-description {
+  font-weight: 500; }
+
+.event-card-register {
+  margin-top: 1em; }
+  @media (min-width: 768px) {
+    .event-card-register {
+      margin-top: 0;
+      width: 33%;
+      float: right;
+      padding: 0;
+      position: absolute;
+      bottom: 3em;
+      right: 1em; } }
+  .event-card-register a {
+    background-color: #40ae49; }
+
+.button, .form-submit, .event-card-register a {
+  color: #ffffff; }
 
 /* DJ Icons */
 /* Scope icons to .page to prevent toolbar conflicts */
-.page-wrapper {
+.page-wrapper, .page-content-wrapper {
   /* Icon Font */
   /* Use the following CSS code if you want to use data attributes for inserting your icons */ }
-  .page-wrapper .icon {
+  .page-wrapper .icon, .page-content-wrapper .icon {
     display: inline-block;
     position: relative;
     top: 2px;
@@ -790,27 +878,27 @@ body.drupal.logged_in {
     height: 22px;
     background-size: 22px 22px;
     background-repeat: no-repeat; }
-  .page-wrapper .icon.icon_calendar {
+  .page-wrapper .icon.icon_calendar, .page-content-wrapper .icon.icon_calendar {
     background-image: url("../img/icon_calendar.png"); }
-  .page-wrapper .icon.icon_clock {
+  .page-wrapper .icon.icon_clock, .page-content-wrapper .icon.icon_clock {
     background-image: url("../img/icon_clock.png"); }
-  .page-wrapper .icon.icon_location {
+  .page-wrapper .icon.icon_location, .page-content-wrapper .icon.icon_location {
     background-image: url("../img/icon_location.png"); }
 @font-face {
-  .page-wrapper {
+  .page-wrapper, .page-content-wrapper {
     font-family: 'icons';
     src: url("../fonts/icons.eot");
     src: url("../fonts/icons.eot?#iefix") format("embedded-opentype"), url("../fonts/icons.woff") format("woff"), url("../fonts/icons.ttf") format("truetype"), url("../fonts/icons.svg#icons") format("svg");
     font-weight: normal;
     font-style: normal; } }
-  .page-wrapper [data-icon]:before {
+  .page-wrapper [data-icon]:before, .page-content-wrapper [data-icon]:before {
     font-family: 'icons';
     content: attr(data-icon);
     speak: none;
     font-weight: normal;
     line-height: 1;
     -webkit-font-smoothing: antialiased; }
-  .page-wrapper .icon-twitter:before, .page-wrapper .icon-stumbleupon:before, .page-wrapper .icon-pinterest:before, .page-wrapper .icon-linkedin:before, .page-wrapper .icon-google-plus:before, .page-wrapper .icon-search:before, .page-wrapper .icon-play:before, .page-wrapper .icon-menu:before, .page-wrapper .icon-arrow-left:before, .page-wrapper .icon-arrow-right:before, .page-wrapper .icon-bubble:before, .page-wrapper .icon-facebook:before, .page-wrapper .icon-feed:before, .page-wrapper .icon-youtube:before, .page-wrapper .icon-tag:before, .page-wrapper .icon-tumblr:before, .page-wrapper .icon-instagram, .page-wrapper .icon-podcast, .page-wrapper .icon-apple, .page-wrapper .icon-android, .page-wrapper .icon-arrow:after, .page-wrapper .icon-envelope:before {
+  .page-wrapper .icon-twitter:before, .page-wrapper .icon-stumbleupon:before, .page-wrapper .icon-pinterest:before, .page-wrapper .icon-linkedin:before, .page-wrapper .icon-google-plus:before, .page-wrapper .icon-search:before, .page-wrapper .icon-play:before, .page-wrapper .icon-menu:before, .page-wrapper .icon-arrow-left:before, .page-wrapper .icon-arrow-right:before, .page-wrapper .icon-bubble:before, .page-wrapper .icon-facebook:before, .page-wrapper .icon-feed:before, .page-wrapper .icon-youtube:before, .page-wrapper .icon-tag:before, .page-wrapper .icon-tumblr:before, .page-wrapper .icon-instagram, .page-wrapper .icon-podcast, .page-wrapper .icon-apple, .page-wrapper .icon-android, .page-wrapper .icon-arrow:after, .page-wrapper .icon-envelope:before, .page-content-wrapper .icon-twitter:before, .page-content-wrapper .icon-stumbleupon:before, .page-content-wrapper .icon-pinterest:before, .page-content-wrapper .icon-linkedin:before, .page-content-wrapper .icon-google-plus:before, .page-content-wrapper .icon-search:before, .page-content-wrapper .icon-play:before, .page-content-wrapper .icon-menu:before, .page-content-wrapper .icon-arrow-left:before, .page-content-wrapper .icon-arrow-right:before, .page-content-wrapper .icon-bubble:before, .page-content-wrapper .icon-facebook:before, .page-content-wrapper .icon-feed:before, .page-content-wrapper .icon-youtube:before, .page-content-wrapper .icon-tag:before, .page-content-wrapper .icon-tumblr:before, .page-content-wrapper .icon-instagram, .page-content-wrapper .icon-podcast, .page-content-wrapper .icon-apple, .page-content-wrapper .icon-android, .page-content-wrapper .icon-arrow:after, .page-content-wrapper .icon-envelope:before {
     font-family: 'icons';
     speak: none;
     font-style: normal;
@@ -819,49 +907,49 @@ body.drupal.logged_in {
     text-transform: none;
     line-height: 1;
     -webkit-font-smoothing: antialiased; }
-  .page-wrapper .icon-twitter:before {
+  .page-wrapper .icon-twitter:before, .page-content-wrapper .icon-twitter:before {
     content: "\74"; }
-  .page-wrapper .icon-stumbleupon:before {
+  .page-wrapper .icon-stumbleupon:before, .page-content-wrapper .icon-stumbleupon:before {
     content: "\75"; }
-  .page-wrapper .icon-pinterest:before {
+  .page-wrapper .icon-pinterest:before, .page-content-wrapper .icon-pinterest:before {
     content: "\70"; }
-  .page-wrapper .icon-linkedin:before {
+  .page-wrapper .icon-linkedin:before, .page-content-wrapper .icon-linkedin:before {
     content: "\69"; }
-  .page-wrapper .icon-google-plus:before {
+  .page-wrapper .icon-google-plus:before, .page-content-wrapper .icon-google-plus:before {
     content: "\67"; }
-  .page-wrapper .icon-search:before {
+  .page-wrapper .icon-search:before, .page-content-wrapper .icon-search:before {
     content: "\73"; }
-  .page-wrapper .icon-play:before {
+  .page-wrapper .icon-play:before, .page-content-wrapper .icon-play:before {
     content: "\61"; }
-  .page-wrapper .icon-menu:before {
+  .page-wrapper .icon-menu:before, .page-content-wrapper .icon-menu:before {
     content: "\21"; }
-  .page-wrapper .icon-arrow-left:before {
+  .page-wrapper .icon-arrow-left:before, .page-content-wrapper .icon-arrow-left:before {
     content: "\23"; }
-  .page-wrapper .icon-arrow-right:before {
+  .page-wrapper .icon-arrow-right:before, .page-content-wrapper .icon-arrow-right:before {
     content: "\24"; }
-  .page-wrapper .icon-bubble:before {
+  .page-wrapper .icon-bubble:before, .page-content-wrapper .icon-bubble:before {
     content: "\25"; }
-  .page-wrapper .icon-facebook:before {
+  .page-wrapper .icon-facebook:before, .page-content-wrapper .icon-facebook:before {
     content: "\66"; }
-  .page-wrapper .icon-feed:before {
+  .page-wrapper .icon-feed:before, .page-content-wrapper .icon-feed:before {
     content: "\27"; }
-  .page-wrapper .icon-youtube:before {
+  .page-wrapper .icon-youtube:before, .page-content-wrapper .icon-youtube:before {
     content: "\79"; }
-  .page-wrapper .icon-tag:before {
+  .page-wrapper .icon-tag:before, .page-content-wrapper .icon-tag:before {
     content: "\28"; }
-  .page-wrapper .icon-tumblr:before {
+  .page-wrapper .icon-tumblr:before, .page-content-wrapper .icon-tumblr:before {
     content: "\6d"; }
-  .page-wrapper .icon-instagram:before {
+  .page-wrapper .icon-instagram:before, .page-content-wrapper .icon-instagram:before {
     content: "\22"; }
-  .page-wrapper .icon-podcast:before {
+  .page-wrapper .icon-podcast:before, .page-content-wrapper .icon-podcast:before {
     content: "\26"; }
-  .page-wrapper .icon-android:before {
+  .page-wrapper .icon-android:before, .page-content-wrapper .icon-android:before {
     content: "\29"; }
-  .page-wrapper .icon-apple:before {
+  .page-wrapper .icon-apple:before, .page-content-wrapper .icon-apple:before {
     content: "\2a"; }
-  .page-wrapper .icon-envelope:before {
+  .page-wrapper .icon-envelope:before, .page-content-wrapper .icon-envelope:before {
     content: "\2b"; }
-  .page-wrapper .icon-arrow:after {
+  .page-wrapper .icon-arrow:after, .page-content-wrapper .icon-arrow:after {
     content: "\61";
     display: inline-block;
     -webkit-transform: rotate(90deg);
@@ -869,13 +957,13 @@ body.drupal.logged_in {
     -ms-transform: rotate(90deg);
     -o-transform: rotate(90deg);
     transform: rotate(90deg); }
-  .page-wrapper .icon-play:before {
+  .page-wrapper .icon-play:before, .page-content-wrapper .icon-play:before {
     font-size: 0.7rem;
     padding-left: 0.2em; }
-  .page-wrapper .icon-play-box {
+  .page-wrapper .icon-play-box, .page-content-wrapper .icon-play-box {
     display: block;
     margin-left: 2em; }
-  .page-wrapper .icon-play-box:before {
+  .page-wrapper .icon-play-box:before, .page-content-wrapper .icon-play-box:before {
     padding: 0.25em;
     background: #4f4848;
     color: #ffffff;
@@ -895,6 +983,16 @@ body.drupal.logged_in {
     left: 0;
     width: 100%;
     height: 100%; }
+
+.people-list {
+  color: #4f4848;
+  text-align: center; }
+  .people-list h2 {
+    color: #faa440; }
+
+.summary {
+  font-weight: 700;
+  font-size: 1.2em; }
 
 .site-header-wrapper {
   background: #060505;
@@ -1049,19 +1147,36 @@ body.drupal.logged_in {
     #nav-toggle {
       display: none; } }
 
-.region-page-bottom ul {
-  list-style: none;
-  padding: 0.5em 0;
-  position: relative;
-  top: -1em;
-  text-align: center; }
-  .region-page-bottom ul img {
-    height: 90px; }
-  .region-page-bottom ul li {
-    margin-right: 1vw;
-    display: inline;
+.sponsors-wrapper {
+  background-color: #fff; }
+
+.region-page-bottom {
+  background-color: #fff; }
+  .region-page-bottom ul {
+    list-style: none;
+    padding: 0.5em 0;
     position: relative;
-    top: 1.25em; }
+    top: -1em;
+    text-align: center; }
+    .region-page-bottom ul img {
+      height: 90px; }
+    .region-page-bottom ul li {
+      margin-right: 1vw;
+      display: inline;
+      position: relative;
+      top: 1.25em; }
+
+.events, body.page-workshops, body.node-type-event {
+  background-image: url("../img/green-paper.png");
+  background-color: #40ae49;
+  background-size: 100%;
+  color: #ffffff; }
+  .events .page-content, body.page-workshops .page-content, body.node-type-event .page-content {
+    color: #ffffff; }
+  .events a:link, body.page-workshops a:link, body.node-type-event a:link {
+    color: #ffffff; }
+  .events a:visited, body.page-workshops a:visited, body.node-type-event a:visited {
+    color: #ffffff; }
 
 .hero {
   font-family: "MuseoSlab";
@@ -1172,10 +1287,10 @@ body.drupal.logged_in {
   background-image: url("../img/blue-paper.png");
   background-color: #1669a2;
   color: #ffffff; }
-  .highlight.bigtent .button, .highlight.bigtent .form-submit, .highlight.bigtent .event-row-register a, .event-row-register .highlight.bigtent a {
+  .highlight.bigtent .button, .highlight.bigtent .form-submit, .highlight.bigtent .event-card-register a, .event-card-register .highlight.bigtent a {
     background-color: #fbc101;
     margin-bottom: 1em; }
-    .highlight.bigtent .button:first-child, .highlight.bigtent .form-submit:first-child, .highlight.bigtent .event-row-register a:first-child, .event-row-register .highlight.bigtent a:first-child {
+    .highlight.bigtent .button:first-child, .highlight.bigtent .form-submit:first-child, .highlight.bigtent .event-card-register a:first-child, .event-card-register .highlight.bigtent a:first-child {
       margin-right: 1em; }
   .highlight.bigtent .description {
     margin-bottom: 2em; }
@@ -1195,11 +1310,7 @@ body.drupal.logged_in {
 
 /* The Events home page section */
 .events.highlight {
-  padding-bottom: 2em;
-  color: #ffffff;
-  background-image: url("../img/green-paper.png");
-  background-color: #40ae49;
-  background-size: 100%; }
+  padding-bottom: 2em; }
 
 .events-title img {
   height: 2em;
@@ -1208,66 +1319,8 @@ body.drupal.logged_in {
   top: .2rem;
   left: .5rem; }
 
-.events-disclaimer,
-.view-footer {
+.events-disclaimer, .view-footer {
   font-size: .875rem; }
-
-/* Single event listing */
-.event-row {
-  position: relative;
-  margin: 1em 0;
-  padding: 1em;
-  border-bottom: 4px solid #266628;
-  color: #000000;
-  background-color: #ffffff;
-  font-size: 1rem; }
-  .event-row p {
-    font-size: 1rem; }
-  @media (max-width: 767px) {
-    .event-row .event-row-description {
-      display: none; } }
-  @media (min-width: 768px) {
-    .event-row .event-row-meta {
-      margin-bottom: 1em; }
-    .event-row .event-row-description {
-      width: 66%;
-      float: left; } }
-  .event-row .event-row-register {
-    margin-top: 1em; }
-    @media (min-width: 768px) {
-      .event-row .event-row-register {
-        margin-top: 0;
-        width: 33%;
-        float: right;
-        padding: 0;
-        position: absolute;
-        bottom: 3em;
-        right: 1em; } }
-
-.event-row-title {
-  margin-bottom: 0.5em;
-  font-family: "MuseoSans", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-  font-size: 1.5rem; }
-
-.event-row-meta {
-  font-family: "TabletGothicCondensed", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-  font-size: 1.25em;
-  color: #4f4848; }
-  .event-row-meta span {
-    margin-right: 0.5em;
-    display: inline-block; }
-    .event-row-meta span .icon {
-      margin-right: 0.5em; }
-    @media (min-width: 768px) {
-      .event-row-meta span .icon {
-        margin-right: .1em; } }
-
-.event-row-description {
-  font-weight: 500;
-  color: #060505; }
-
-.event-row-register a {
-  background-color: #40ae49; }
 
 .toolbox.highlight {
   color: #ffffff;
@@ -1297,7 +1350,7 @@ body.drupal.logged_in {
     margin: 1em;
     width: 50%;
     margin: auto; }
-  .highlight.mailing-list .button, .highlight.mailing-list .form-submit, .highlight.mailing-list .event-row-register a, .event-row-register .highlight.mailing-list a {
+  .highlight.mailing-list .button, .highlight.mailing-list .form-submit, .highlight.mailing-list .event-card-register a, .event-card-register .highlight.mailing-list a {
     margin: 1em; }
 
 /*
@@ -1355,6 +1408,49 @@ Error Message
 Container for success message.
 
 */
+body.node-type-event .page-header, body.page-workshops .page-header {
+  padding: 0; }
+  body.node-type-event .page-header .page-description, body.page-workshops .page-header .page-description {
+    float: left;
+    font-size: 1.5rem; }
+body.node-type-event .event, body.page-workshops .event {
+  margin: 0; }
+body.node-type-event .event-header, body.page-workshops .event-header {
+  margin-top: 1em;
+  background-color: #4f4848;
+  color: #ffffff; }
+  body.node-type-event .event-header a:link, body.page-workshops .event-header a:link {
+    color: #ffffff; }
+  body.node-type-event .event-header a:visited, body.page-workshops .event-header a:visited {
+    color: #ffffff; }
+body.node-type-event .event-header-info, body.page-workshops .event-header-info {
+  padding: 1em; }
+body.node-type-event .event-header-image, body.page-workshops .event-header-image {
+  background-color: #fff;
+  height: 228px; }
+body.node-type-event .event-card-meta, body.page-workshops .event-card-meta {
+  margin-bottom: 2em; }
+body.node-type-event .event-description, body.page-workshops .event-description {
+  margin-bottom: 1em; }
+body.node-type-event .node-event, body.page-workshops .node-event {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 1em; }
+body.node-type-event .summary, body.page-workshops .summary {
+  color: #40ae49;
+  border-bottom: 2px solid #40ae49;
+  padding-bottom: 1em;
+  margin-bottom: 1em; }
+
+body.page-workshops h1 {
+  border-bottom: thick solid #ffffff;
+  float: left;
+  margin-right: 1.3em; }
+body.page-workshops .view-header {
+  font-size: 1.5rem; }
+body.page-workshops .view-content {
+  clear: both; }
+
 .page.person a:link, .page.person a:active, .page.person a:hover, .page.person a:visited {
   color: #000000; }
 

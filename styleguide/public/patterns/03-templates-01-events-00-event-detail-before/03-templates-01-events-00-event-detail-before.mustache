@@ -1,0 +1,17 @@
+&lt;div class=&quot;container&quot;&gt;
+  &lt;h1&gt;Event Title&lt;/h1&gt;
+  {{#before}}
+    {{&gt; molecules-event-row-register }}
+  {{/before}}
+
+  {{&gt; molecules-event-row-meta }}
+  
+  {{#during}}
+    &lt;p&gt;
+      &quot;Day of&quot; text: location details, annocements, itinerary, etc.
+  {{/during}}
+
+  &lt;p&gt;{{ excerpt.long }} &lt;/p&gt;
+
+
+&lt;/div&gt;

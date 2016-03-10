@@ -1,0 +1,9 @@
+.events, body.page-workshops, body.node-type-event {
+  background-image: url("../img/green-paper.png");
+  background-color: $green-light;
+  background-size: 100%;
+  color: $white;
+  .page-content { color: $white; }
+  a:link    { color: $white; }
+  a:visited { color: $white; }
+}

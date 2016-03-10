@@ -13,6 +13,9 @@ body.drupal.logged_in {
 .tabs.primary {
   margin:0;
   border-bottom-color: $grey-light;
+  color: $black;
+  a:link { color: $black !important; }
+  a:visited { color: $black !important; }
   li {
     position: relative;
     top:-9px;
@@ -47,7 +50,7 @@ body.drupal.logged_in {
   @extend .blue;
   border-radius: 0;
   border: none;
-  font-family: $font;
+  font-family: $font-primary;
   font-size: 1rem;
 }
 

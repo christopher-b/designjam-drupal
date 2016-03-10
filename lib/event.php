@@ -48,20 +48,52 @@ class Event {
   public $eventbrite_id;
   public $eventbrite_url;
   public $path;
+  public $image;
+  public $people = array();
 
   function __construct($entity) {
-    // print_r($entity);die;
     $this->node_id         = $entity->nid;
     $this->path            = 'node/'.$this->node_id;
     $this->title           = $entity->title;
-    $this->description     = $entity->body['und'][0]['value'];
-    $this->summary         = $entity->body['und'][0]['summary'];
+    @$this->description    = $entity->body['und'][0]['value'];
+    @$this->summary        = $entity->body['und'][0]['summary'];
     @$this->start_date     = $entity->field_date['und'][0]['value'];
     @$this->end_date       = $entity->field_date['und'][0]['value2'];
     @$this->location       = $entity->field_location['und'][0]['value'];
     @$this->location_name  = $entity->field_location_name['und'][0]['value'];
     @$this->eventbrite_id  = $entity->field_eventbrite_id['und'][0]['value'];
     @$this->eventbrite_url = 'https://www.eventbrite.ca/e/'.$this->eventbrite_id;
+    @$this->image          = $entity->field_event_image['und'][0];
+
+    if(!empty($entity->field_people)){
+      foreach($entity->field_people['und'] as $person) {
+        $person = new Person($person['tid']);
+        $this->people[] = $person;
+      }
+    }
+  }
+
+  function isPast() {
+    return $this->end_date < time();
+  }
+
+  function day() {
+    return date('l M j, Y', $this->start_date);
+  }
+
+  function timespan() {
+    // Show time span, or "All day"
+    $startTimeFormat = (date('i', $this->start_date) == '00') ? 'ga' : 'g:ia';
+    $endTimeFormat   = (date('i', $this->end_date)   == '00') ? 'ga' : 'g:ia';
+    if(date('G', $this->start_date) == '0' && date('G', $this->end_date) == '0') {
+      $time = 'All day';
+    }
+    else {
+      $startTime = date($startTimeFormat, $this->start_date);
+      $endTime   = date($endTimeFormat,   $this->end_date);
+      $time = $startTime."&ndash;".$endTime;
+    }
+    return $time;
   }
 
 }

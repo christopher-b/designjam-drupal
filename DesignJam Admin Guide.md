@@ -1,9 +1,11 @@
 # DesignJam Admin Guide
+
 ## TL;DR
  - Home page content sections are “blocks”, except for Workshops
  - Workshops section on home page is a “View”
  - Workshops items are content items of the “Event” type
  - About, Terms and Partners are “Pages”
+ - Toolbox entries and People are "Taxonomies"
  - Menus are menus
  - A bunch of stuff is hard-coded into the templates, for now.
 
@@ -19,5 +21,11 @@ The contact menu in the footer is hard-coded for now. The middle column is a men
 ## Pages
 About, Partners and Terms of Service are plain ‘ole “Basic Pages”, and can be found in the content section.  
 
-# Sponsors
-~~The sponsor images are one big image for now,~~ living in a block in the “Page bottom” region.
+## Toolbox
+Toolbox “Themes” and “Topics” are terms in the “Toolbox Categories” taxonomy. They can be added / edited under Structure > Taxonomy > Toolbox Categories. A term with no parent will appear on the Toolbox homepage, otherwise it appear as a Topic on the Theme page. The descriptions on these terms appear on the relevant pages.
+
+You can add content to the “Topics” by creating “Media Items”, which are a custom content type. Go to Content > Add Content > Media Item. You can upload a file or copy a link to a video or other external resource. If you’re uploading a file, use the Attachment field and leave URL blank. If you’re embedding something like a Vimeo video, copy and past the video link into the URL field. It will be smart about embedding this content, but so far only supports Vimeo videos. Anything other URLs will be treated like external links and will just open that url in a new tab.
+
+
+## People
+You can add “people” as taxonomy terms, and attach them to media items in the Creator field. People can have bios, portraits, etc. Don’t use the top-level “people” link, that’s for adding admin users to the site.

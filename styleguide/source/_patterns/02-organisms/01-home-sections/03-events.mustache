@@ -1,0 +1,10 @@
+<section class="events highlight page">
+  <div class="container">
+    {{> molecules-events-header-partial }}
+    {{> molecules-events-lede }}
+    {{#events}}
+    {{> organisms-event-row-partial }}
+    {{/events}}
+    {{> molecules-events-disclaimer }}
+  </div>
+</section>

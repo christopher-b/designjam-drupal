@@ -40,8 +40,13 @@ class Person {
   }
 
   public function render_portrait() {
-    $this->portrait['path'] = $this->portrait['uri']; // theme_image() requires 'path'
-    return theme_image($this->portrait);
+    if($this->portrait){
+      $this->portrait['path'] = $this->portrait['uri']; // theme_image() requires 'path'
+      $this->portrait['attributes'] = [];
+      // print_r($this->portrait);die;
+      return theme_image($this->portrait);
+    }
+    else { return ''; }
     // $url = file_create_url($this->portrait['uri']);
     // return "<img src='$url' title='{$this->portrait['title']}' alt='{$this->portrait['alt']}'  width='{$this->portrait['width']}' height='{$this->portrait['height']}' />";
   }

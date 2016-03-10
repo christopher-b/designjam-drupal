@@ -1,0 +1,120 @@
+{
+  "title" : "DesignJam Style Guide",
+  "themeRoot": "/sites/designjam.ocadu.ca/themes/designjam",
+  "imageRoot": "/sites/designjam.ocadu.ca/themes/designjam/img",
+  "cssRoot":   "/sites/designjam.ocadu.ca/themes/designjam/css",
+  "jsRoot":    "/sites/designjam.ocadu.ca/themes/designjam/js",
+  "bodyClass": "body styleguide",
+  "img": {
+    "landscape-4x3": {
+      "src": "../../images/fpo_4x3.png",
+      "alt": "4x3 Image"
+    },
+    "landscape-16x9": {
+      "src": "../../images/fpo_16x9.png",
+      "alt": "16x9 Image"
+    },
+    "square": {
+      "src": "../../images/fpo_square.png",
+      "alt": "Square Thumbnail"
+    },
+    "avatar" : {
+      "src" : "../../images/fpo_avatar.png",
+      "alt" : "Person Name"
+    },
+    "rectangle": {
+      "src": "http://placeimg.com/400/300/tech",
+      "alt": "Rectangle"
+    }
+  },
+  "event-title": "An Event Title",
+  "event-date": "Monday Jan 1, 2015",
+  "event-time": "9am–1pm",
+  "event-location":"OCAD University, Toronto",
+  "events": [
+    {
+      "event-title": "An Event Title",
+      "event-date": "Monday Jan 1, 2015",
+      "event-time": "9am–1pm",
+      "event-location":"OCAD University, Toronto"
+    },
+    {
+      "event-title": "The Long Tail: An Event Title With A Very Long Title, Featuring Extra Information About Things",
+      "event-date": "Saturday Dec 31, 2017",
+      "event-time": "10:15am–12:45pm",
+      "event-location":"MaRS Discovery District West Wing, Toronto"
+    },
+    {
+      "event-title": "Toolkit for Human-Centredness",
+      "event-date": "Wednesday Feb 10, 2015",
+      "event-time": "10am–4:30pm",
+      "event-location":"Strategic Innovation Lab (sLab)"
+    }
+  ],
+  "headline" : {
+    "short" : "Lorem ipsum dolor sit (37 characters)",
+    "medium" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. (72 characters)"
+  },
+  "excerpt" : {
+    "short" : "Either do that, sir, or waste in one day more oil than we may make good in a year. What we come twenty thousand miles to get is worth saving, sir. So it is, so it is; if we get it.",
+    "medium" : "Doesn't anyone else know you're a humbug? asked Dorothy. No one knows it but you four--and myself, replied Oz.  I have fooled everyone so long that I thought I should never be found out.  It was a great mistake my ever letting you into the Throne Room.  Usually I will not see even my subjects, and so they believe I am something terrible.",
+    "long" : "Either do that, sir, or waste in one day more oil than we may make good in a year. What we come twenty thousand miles to get is worth saving, sir. So it is, so it is; if we get it. I was speaking of the oil in the hold, sir. And I was not speaking or thinking of that at all. Begone! Let it leak! I'm all aleak myself. Aye! leaks in leaks! not only full of leaky casks, but those leaky casks are in a leaky ship; and that's a far worse plight than the Pequod's, man. Yet I don't stop to plug my leak; for who can find it in the deep-loaded hull; or how hope to plug it, even if found, in this life's howling gale?"
+  },
+  "description" : "So, setting about it as methodically as men might smoke out a wasps' nest, the Martians spread this strange stifling vapour over the Londonward country. The horns of the crescent slowly moved apart, until at last they formed a line from Hanwell to Coombe and Malden. All night through their destructive tubes advanced.",
+  "url" : "#",
+  "name" : {
+    "first": "Lacy",
+    "firsti": "L",
+    "middle": "Tommie",
+    "middlei": "T",
+    "last": "Way",
+    "lasti": "W"
+  },
+  "year" : {
+    "long": "2013",
+    "short": "13"
+  },
+  "month" : {
+    "long": "February",
+    "short": "Feb",
+    "digit": "02"
+  },
+  "dayofweek" : {
+    "long": "Monday",
+    "short": "Mon"
+  },
+  "day" : {
+    "long": "10",
+    "short": "10",
+    "ordinal": "th"
+  },
+  "hour" : {
+    "long": "01",
+    "short": "1",
+    "military": "13",
+    "ampm": "pm"
+  },
+  "minute" : {
+    "long": "20",
+    "short": "20"
+  },
+  "seconds" : "31",
+  "author" : {
+    "first-name": "Author",
+    "last-name": "Name"
+  },
+  "hero": true,
+  "emergency" : false,
+  "touts" : [
+    { },
+    { },
+    { }
+  ],
+  "latest-posts" : [
+    { },
+    { },
+    { },
+    { },
+    { }
+  ]
+}
