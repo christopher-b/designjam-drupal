@@ -4,16 +4,23 @@
   position: relative;
   margin:0 auto;
   padding:0 $pad;
-  // .item-list ul li { margin: 0; }
 }
 
 .site-header,
 .site-footer,
 .page-content,
+.breadcrumbs,
+.page-meta,
 .page-header,
-.sponsors { @extend .container; }
-.page-header, .page-content { padding: $pad-double 0; }
-.page-content-wrapper, .page-header-wrapper { padding: 0 $pad; }
+.page-body,
+.sponsors {
+  @extend .container;
+}
+.page-header-wrapper {
+  padding-top:    $pad-double;
+  padding-bottom: $pad;
+}
+.page-content-wrapper { padding-bottom: $pad-double; }
 
 .highlight {
   padding: $pad-double 0;

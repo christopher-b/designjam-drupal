@@ -69,38 +69,53 @@
  // phpinfo();die;
 ?>
 <?php include './'. path_to_theme() .'/templates/header.tpl.php';?>
-  <div class="container">
-    <a id="main-content"></a>
-    <?php if (!empty($messages)): ?>
-      <div class="row messages">
-        <?php print $messages; ?>
-      </div>
-    <?php endif; ?>
 
-    <?php if (!empty($page['help'])): ?>
-      <?php print render($page['help']); ?>
-    <?php endif; ?>
-
-    <?php if (!empty($action_links)): ?>
-      <ul class="action-links"><?php print render($action_links); ?></ul>
-    <?php endif; ?>
+<div class="page-content-wrapper">
+  <a id="main-content"></a>
+  <div class="page-header-wrapper">
+    <?php
+    if(isset($node)): switch ($node->type):
+      case 'event': include '_header-event-detail.php'; break;
+      default:      include '_header.php';              break;
+    endswitch;
+    else :
+      include '_header.php';
+    endif;
+    ?>
   </div>
 
-  <div class="page-content-wrapper">
-    <section class="page-content container">
+  <section class="page-body-wrapper">
+    <div class="page-body">
+
       <?php
-      if(isset($node)): switch ($node->type):
-        case 'event': include '_header-event-detail.php'; break;
-        default:      include '_header.php';              break;
-      endswitch;
-      else : include '_header.php'; endif;
+      /*
+      <div class="page-meta-wrapper">
+        <div class="page-meta">
+          <?php if (!empty($tabs)): ?>
+            <?php print render($tabs); ?>
+          <?php endif; ?>
+
+          <?php if (!empty($messages)): ?>
+            <div class="row messages">
+              <?php print $messages; ?>
+            </div>
+          <?php endif; ?>
+
+          <?php if (!empty($page['help'])): ?>
+            <?php print render($page['help']); ?>
+          <?php endif; ?>
+
+          <?php if (!empty($action_links)): ?>
+            <ul class="action-links"><?php print render($action_links); ?></ul>
+          <?php endif; ?>
+        </div>
+      </div>
+      */
       ?>
 
-      <div class="">
-        <?php print render($page['content']); ?>
-      </div>
-    </section>
-
-  </div> <!-- /.container -->
+      <?php print render($page['content']); ?>
+    </div>
+  </section>
+</div> <!-- /#page-content-wrapper -->
 
 <?php include './'. path_to_theme() .'/templates/footer.tpl.php';?>

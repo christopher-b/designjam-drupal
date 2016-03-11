@@ -4,11 +4,12 @@
   <li><?php print $title; ?></li>
 </ol>
 
-<?php $event = new Event($node); ?>
 
+<?php $event = new Event($node); ?>
 <?php if (!empty($title)): ?>
   <?php print render($title_prefix); ?>
-    <div class="page-header event-header clearfix">
+  <div class="event-header-wrapper container clearfix">
+    <div class="event-header clearfix">
       <div class="event-header-info col-3-4">
         <h1><?php print $title; ?></h1>
         <div class="event-card-meta">
@@ -34,13 +35,6 @@
         &nbsp;
       </div>
     </div>
+  </div>
   <?php print render($title_suffix); ?>
 <?php endif; ?>
-
-<?php
-/*
-<?php if (!empty($tabs)): ?>
-  <?php print render($tabs); ?>
-<?php endif; ?>
-*/
-?>

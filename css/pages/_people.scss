@@ -1,5 +1,18 @@
-.page.person {
-  a {
-    &:link,&:active,&:hover,&:visited { color: $black;}
+body.page-people {
+  .page-header-wrapper {
+    background-color: $purple;
+    color: $white;
   }
+  // .page-header {
+  //   // padding: 0;
+  //   .page-description {
+  //     float: left;
+  //     font-size: 1.5rem;
+  //   }
+  // }
 }
+
+// body.page.person {
+//
+//   // a { &:link,&:active,&:hover,&:visited { color: $black;} }
+// }

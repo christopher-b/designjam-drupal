@@ -21,11 +21,10 @@ p {
 }
 h1,h2,h3,h4,h5,h6 { margin-top: 0; }
 a {
-  color: $white;
-  text-decoration: none;
+  color: $black;
+  text-decoration: underline;;
   outline: 0;
-  &:hover, &:focus {
-    color: $white;
+  &:link, &:visited, &:hover, &:focus {
     text-decoration: underline;
   }
 }

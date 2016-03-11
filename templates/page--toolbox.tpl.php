@@ -77,7 +77,26 @@ $themes = taxonomy_get_tree($toolbox_taxonomy->vid, 0, $max_depth = 1, true);
 // print_r($themes);
 ?>
 <?php include './'. path_to_theme() .'/templates/header.tpl.php';?>
-<div class="page toolbox">
+<div class="page-content-wrapper page toolbox">
+  <div class="page-meta-wrapper">
+    <div class="page-meta-container">
+      <?php if (!empty($messages)): ?>
+        <div class="row messages">
+          <?php print $messages; ?>
+        </div>
+      <?php endif; ?>
+
+      <?php if (!empty($page['help'])): ?>
+        <?php print render($page['help']); ?>
+      <?php endif; ?>
+
+      <?php if (!empty($action_links)): ?>
+        <ul class="action-links"><?php print render($action_links); ?></ul>
+      <?php endif; ?>
+    </div>
+  </div>
+
+  <a id="main-content"></a>
   <div class="page-header-wrapper">
     <header class="page-header clearfix grid">
       <h1><?php print $title; ?></h1>
@@ -87,14 +106,10 @@ $themes = taxonomy_get_tree($toolbox_taxonomy->vid, 0, $max_depth = 1, true);
     </header>
   </div>
 
-  <div class="page-content-wrapper">
-    <a id="main-content"></a>
-    <section class="page-content">
-
+  <section class="page-body-wrapper">
+    <div class="page-body">
       <?php if (!empty($tabs)){ print render($tabs); } ?>
-
-      <div class="videos">
-      </div>
+      <div class="videos"> </div>
 
       <p class="cta">What do you aspire to learn?</p>
       <p class="cta-sub">Select a topic below for workshop videos, handouts and more</p>
@@ -111,11 +126,10 @@ $themes = taxonomy_get_tree($toolbox_taxonomy->vid, 0, $max_depth = 1, true);
           </a>
         <?php endforeach; ?>
       </div>
+    </div>
+  </section>
 
-    </section>
-  </div>
-
-  <div class="page-content-wrapper toolbox-gallery-wrapper">
+  <div class="toolbox-gallery-wrapper">
     <aside class="page-content toolbox-gallery">
       <h2>Photo Gallery</h2>
       <?php // https://flickrit.com/index.php ?>
@@ -125,5 +139,6 @@ $themes = taxonomy_get_tree($toolbox_taxonomy->vid, 0, $max_depth = 1, true);
       <!-- <a data-flickr-embed="true"  href="https://www.flickr.com/photos/130435212@N04/albums/72157649341997433" title="DesignJam Toronto: Activities"><img src="https://farm9.staticflickr.com/8708/16799248119_4ea94c088c_b.jpg" width="992" height="683" alt="DesignJam Toronto: Activities"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script> -->
     </aside>
   </div>
+
 </div>
 <?php include './'. path_to_theme() .'/templates/footer.tpl.php';?>

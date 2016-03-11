@@ -18,6 +18,13 @@
   h2 {margin-top: 0; }
   h2, img { margin-bottom: $space; }
   ul { list-style: none; padding: 0; }
+  a {
+    color: $white;
+    &:link, &:visited, &:hover, &:focus {
+      color: $white;
+      text-decoration: none;
+    }
+  }
 
   @include media-medium {
     text-align: left;

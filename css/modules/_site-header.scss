@@ -3,6 +3,13 @@
   font-weight: bold;
   overflow: hidden;
   z-index: 9999;
+  a {
+    color: $white;
+    &:link, &:visited, &:hover, &:focus {
+      color: $white;
+      text-decoration: none;
+    }
+  }
   .logo {
     position: relative;
     float:left;

@@ -19,12 +19,13 @@
 @import 'components/event-card';
 @import 'components/icons';
 @import 'components/media';
-@import 'components/people-list';
+@import 'components/page-header';
 @import 'components/summary';
 
 @import 'modules/site-header';
 @import 'modules/site-footer';
 @import 'modules/navigation';
+@import 'modules/people-list';
 @import 'modules/sponsors';
 @import 'modules/workshops';
 @import 'modules/highlights-hero';
@@ -35,6 +36,7 @@
 @import 'modules/highlights-mailinglist';
 
 @import 'pages/events';
+@import 'pages/page';
 @import 'pages/people';
 @import 'pages/toolbox';
 @import 'pages/toolbox-term';

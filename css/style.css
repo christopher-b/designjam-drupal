@@ -379,11 +379,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0; }
 
 a {
-  color: #ffffff;
-  text-decoration: none;
+  color: #000000;
+  text-decoration: underline;
   outline: 0; }
-  a:hover, a:focus {
-    color: #ffffff;
+  a:link, a:visited, a:hover, a:focus {
     text-decoration: underline; }
 
 blockquote {
@@ -746,18 +745,22 @@ body.drupal.logged_in {
 .container, .site-header,
 .site-footer,
 .page-content,
+.breadcrumbs,
+.page-meta,
 .page-header,
+.page-body,
 .sponsors {
   max-width: 992px;
   position: relative;
   margin: 0 auto;
   padding: 0 1em; }
 
-.page-header, .page-content {
-  padding: 2em 0; }
+.page-header-wrapper {
+  padding-top: 2em;
+  padding-bottom: 1em; }
 
-.page-content-wrapper, .page-header-wrapper {
-  padding: 0 1em; }
+.page-content-wrapper {
+  padding-bottom: 2em; }
 
 .highlight {
   padding: 2em 0; }
@@ -979,11 +982,14 @@ body.drupal.logged_in {
     width: 100%;
     height: 100%; }
 
-.people-list {
-  color: #4f4848;
-  text-align: center; }
-  .people-list h2 {
-    color: #faa440; }
+.page-header h1 {
+  border-bottom: thick solid;
+  float: left;
+  margin-bottom: 0;
+  margin-right: 1.3em; }
+
+.view-header {
+  font-size: 1.5rem; }
 
 .summary {
   font-weight: 700;
@@ -994,6 +1000,11 @@ body.drupal.logged_in {
   font-weight: bold;
   overflow: hidden;
   z-index: 9999; }
+  .site-header-wrapper a {
+    color: #ffffff; }
+    .site-header-wrapper a:link, .site-header-wrapper a:visited, .site-header-wrapper a:hover, .site-header-wrapper a:focus {
+      color: #ffffff;
+      text-decoration: none; }
   .site-header-wrapper .logo {
     position: relative;
     float: left;
@@ -1034,6 +1045,11 @@ body.drupal.logged_in {
   .site-footer ul {
     list-style: none;
     padding: 0; }
+  .site-footer a {
+    color: #ffffff; }
+    .site-footer a:link, .site-footer a:visited, .site-footer a:hover, .site-footer a:focus {
+      color: #ffffff;
+      text-decoration: none; }
   @media (min-width: 768px) {
     .site-footer {
       text-align: left; } }
@@ -1141,6 +1157,12 @@ body.drupal.logged_in {
   @media only screen and (min-width: 880px) {
     #nav-toggle {
       display: none; } }
+
+.people-list {
+  color: #4f4848;
+  text-align: center; }
+  .people-list h2 {
+    color: #faa440; }
 
 .sponsors-wrapper {
   background-color: #fff; }
@@ -1403,32 +1425,21 @@ Error Message
 Container for success message.
 
 */
-body.node-type-event .breadcrumbs a:link, body.page-workshops .breadcrumbs a:link {
-  color: #ffffff; }
-body.node-type-event .breadcrumbs a:visited, body.page-workshops .breadcrumbs a:visited {
-  color: #ffffff; }
-body.node-type-event .page-header, body.page-workshops .page-header {
-  padding: 0; }
-  body.node-type-event .page-header .page-description, body.page-workshops .page-header .page-description {
-    float: left;
-    font-size: 1.5rem; }
-body.node-type-event .event, body.page-workshops .event {
-  margin: 0; }
+body.node-type-event .page-header-wrapper, body.page-workshops .page-header-wrapper {
+  padding-bottom: 0; }
+body.node-type-event .event-header-wrapper, body.page-workshops .event-header-wrapper {
+  margin-top: 1em; }
+  body.node-type-event .event-header-wrapper h1, body.page-workshops .event-header-wrapper h1 {
+    border-bottom: none; }
 body.node-type-event .event-header, body.page-workshops .event-header {
-  margin-top: 1em;
-  background-color: #4f4848;
-  color: #ffffff; }
-  body.node-type-event .event-header a:link, body.page-workshops .event-header a:link {
-    color: #ffffff; }
-  body.node-type-event .event-header a:visited, body.page-workshops .event-header a:visited {
-    color: #ffffff; }
+  background-color: #4f4848; }
 body.node-type-event .event-header-info, body.page-workshops .event-header-info {
   padding: 1em; }
 body.node-type-event .event-header-image, body.page-workshops .event-header-image {
   background-color: #fff;
   height: 228px; }
 body.node-type-event .event-card-meta, body.page-workshops .event-card-meta {
-  margin-bottom: 2em; }
+  margin-bottom: 1em; }
 body.node-type-event .event-description, body.page-workshops .event-description {
   margin-bottom: 1em; }
 body.node-type-event .node-event, body.page-workshops .node-event {
@@ -1445,17 +1456,14 @@ body.node-type-event .summary, body.page-workshops .summary {
   padding-bottom: 1em;
   margin-bottom: 1em; }
 
-body.page-workshops h1 {
-  border-bottom: thick solid #ffffff;
-  float: left;
-  margin-right: 1.3em; }
-body.page-workshops .view-header {
-  font-size: 1.5rem; }
-body.page-workshops .view-content {
-  clear: both; }
+body.page-workshops .event {
+  margin: 0; }
+body.page-workshops .page-header-wrapper {
+  margin-bottom: 1em; }
 
-.page.person a:link, .page.person a:active, .page.person a:hover, .page.person a:visited {
-  color: #000000; }
+body.page-people .page-header-wrapper {
+  background-color: #8e2bc7;
+  color: #ffffff; }
 
 .toolbox .page-header-wrapper {
   background-color: #d26305; }
