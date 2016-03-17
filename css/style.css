@@ -1179,7 +1179,7 @@ body.drupal.logged_in {
   .person-card a {
     text-decoration: none; }
   .person-card a:link, .person-card a:visited {
-    color: #8e2bc7; }
+    color: #67457b; }
   .person-card a:hover {
     text-decoration: underline; }
   .person-card img {
@@ -1518,7 +1518,7 @@ body.page-workshops .event {
   clear: both; }
 
 body.people .page-header-wrapper, .taxonomy-people .page-header-wrapper {
-  background-color: #8e2bc7;
+  background-color: #67457b;
   color: #ffffff; }
   body.people .page-header-wrapper a, body.people .page-header-wrapper a:link, .taxonomy-people .page-header-wrapper a, .taxonomy-people .page-header-wrapper a:link {
     color: #ffffff; }
@@ -1530,7 +1530,7 @@ body.people .field-name-field-portrait .field-item, .taxonomy-people .views-fiel
 body.people .view-header {
   font-size: 1em;
   margin-top: 1em;
-  color: #8e2bc7; }
+  color: #67457b; }
 body.people .view-content {
   text-align: center; }
 body.people .views-field-field-short-description {
