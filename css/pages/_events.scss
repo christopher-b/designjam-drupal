@@ -1,9 +1,5 @@
 // Listing and detail page
 body.node-type-event, body.page-workshops {
-//   .event { margin: 0; }
-  .page-meta {
-    background-color: inherit;
-  }
   .page-header-wrapper { padding-bottom: 0 }
   .event-header-wrapper {
     margin-top: $pad;
@@ -42,5 +38,8 @@ body.node-type-event, body.page-workshops {
 
 // Listing page
 body.page-workshops {
+  .page-meta {
+    background-color: inherit;
+  }
   .event { margin: 0; }
 }

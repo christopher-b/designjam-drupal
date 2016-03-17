@@ -1473,8 +1473,6 @@ Error Message
 Container for success message.
 
 */
-body.node-type-event .page-meta, body.page-workshops .page-meta {
-  background-color: inherit; }
 body.node-type-event .page-header-wrapper, body.page-workshops .page-header-wrapper {
   padding-bottom: 0; }
 body.node-type-event .event-header-wrapper, body.page-workshops .event-header-wrapper {
@@ -1511,6 +1509,8 @@ body.node-type-event .page-summary, body.page-workshops .page-summary {
   margin-bottom: 0.5em;
   padding-bottom: 0.5em; }
 
+body.page-workshops .page-meta {
+  background-color: inherit; }
 body.page-workshops .event {
   margin: 0; }
 
