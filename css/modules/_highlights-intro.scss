@@ -3,6 +3,9 @@
   background-image: url("../img/gray-paper.png");
   background-size: 100%;
   color: $white;
+  a {
+    color: $white;
+  }
   .photo { display: none; }
   .call-to-action { padding-top: $pad-double; }
   @include media-medium {
@@ -72,8 +75,11 @@
       img { max-width: 4em; }
     }
 
-    a:hover  { text-decoration: none; }
-    a:active { text-decoration: none; }
+    a {
+      &:link, &:active, &:hover {
+        text-decoration: none;
+      }
+    }
     &.bigtent { .image img { max-width: 6em; } }
     &.events-cta  {
       margin-top: 0;

@@ -9,9 +9,9 @@ version = VERSION
 ;;;;;;;;;;;;;;;;;;;;;
 
 regions[navigation]     = 'Navigation'
-regions[banner]         = 'Banner'
+;regions[banner]         = 'Banner'
 regions[highlighted]    = 'Highlighted'
-regions[help]           = 'Help'
+;regions[help]           = 'Help'
 regions[content]        = 'Content'
 regions[page-bottom]    = 'Page bottom'
 regions[footer-col1]    = 'Footer - Column 1'

@@ -11,9 +11,17 @@ body.node-type-event, body.page-workshops {
   .event-header-image {
     background-color: #fff;
     height: 228px;
+    padding-right: 0;
   }
   .event-card-meta { margin-bottom: $pad; }
-  .event-description { margin-bottom: $pad; }
+  .event-description {
+    margin-bottom: $pad;
+    h2 {
+      color: $yellow-dark;
+      margin-top: $pad;
+      margin-bottom: $pad-half;
+    }
+  }
   .node-event {
     background-color: $white;
     padding: $pad;
@@ -21,10 +29,9 @@ body.node-type-event, body.page-workshops {
     a:link { color: $off-black; }
     a:visited { color: $off-black; }
   }
-  .summary {
+  .page-summary {
     color: $green-light;
     border-bottom: 2px solid $green-light;
-    padding-bottom: $pad;
     margin-bottom: $pad;
   }
 }
@@ -32,5 +39,4 @@ body.node-type-event, body.page-workshops {
 // Listing page
 body.page-workshops {
   .event { margin: 0; }
-  .page-header-wrapper { margin-bottom: $pad; }
 }

@@ -1,9 +1,10 @@
-<ol class="breadcrumbs">
-  <li><a href="/">Home</a></li>
-  <li><a href="/workshops">Workshops</a></li>
-  <li><?php print $title; ?></li>
-</ol>
-
+<div class="page-header">
+  <ol class="breadcrumbs">
+    <li><a href="/">Home</a></li>
+    <li><a href="/workshops">Workshops</a></li>
+    <li><?php print $title; ?></li>
+  </ol>
+</div>
 
 <?php $event = new Event($node); ?>
 <?php if (!empty($title)): ?>
@@ -15,7 +16,7 @@
         <div class="event-card-meta">
           <span><i class="icon icon_calendar"></i><?php print $event->day(); ?></span>
           <span><i class="icon icon_clock"></i><?php print $event->timespan(); ?></span>
-          <?php if(isset($event->location_name)):?>
+          <?php if(isset($event->location_name)): ?>
             <span>
               <i class="icon icon_location"></i>
               <?php print $event->location_name;?>, <?php print $event->location;?>
@@ -32,7 +33,9 @@
         <?php endif; ?>
       </div>
       <div class="event-header-image col-1-4">
-        &nbsp;
+        <?php if(!empty($event->thumbnail)) : ?>
+          <?php print $event->render_thumbnail(); ?>
+        <?php endif; ?>
       </div>
     </div>
   </div>

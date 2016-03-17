@@ -1,126 +1,93 @@
 .toolbox {
+  color: $orange;
   .page-header-wrapper { background-color: $orange; }
   .page-header {
     color: $white;
-    h1 {
-      color: $white;
-      float: left;
-      margin-right: 1.3em;
-      border-bottom: thick solid $white;
-    }
-    .page-description {
-      float: left;
-      font-size: 1.5rem;
-    }
   }
-
-  .toolbox-gallery-wrapper {
-    background-color: $orange;
-    h2 { color: $white; }
-  }
-
-  .cta, .cta-sub {
-    color: $orange;
+  .view-header {
     text-align: center;
-   }
-  .cta {
-    margin-bottom: 0;
-    font-size: 2em;
-    font-family: $font-secondary;
-    font-weight: 900;
-  }
-  .cta-sub {
-    font-size: 1.5rem;
+    padding-top: $pad-half;
+    strong {
+      font-size: 1.25em;
+      font-family: $font-secondary;
+      font-weight: 900;
+    }
   }
 
-  .themes {
-    .card {
-      position: relative;
-      // width: 90vw;
-      // height: 54vw;
-      // margin: 0 $pad $pad auto;
-      margin-bottom: $pad;
-      padding-top: $pad-double;
-      text-align: center;
+  .toolbox-card {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: $pad;
+    padding-top: $pad;
+    color: $white;
+    background-color: $black;
+    text-align: center;
+    a, a:link, a:visited {
       color: $white;
-      h3 {
-        // color: $white;
-        font-family: $font-primary;
-        font-size: 1.5em;
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+    .views-field-name {
+      position: relative;
+      h2 {
         font-weight: 700;
         font-style: normal;
-      }
-      p {
-        padding-bottom: $pad;
-        font-style: italic;
-        font-weight: 500;
-        font-size: 1.25em;
-      }
-      hr {
-        position: relative;
-        height: 0;
-        width: 10%;
-        margin: 0 auto $pad auto;
-        border-bottom: thin solid $white;
-      }
-      @include media-medium {
-        height: 18em;
-        // Fake padding without messing with border-box size
-        &:nth-child(odd) { border-right: $pad solid $white; }
-        h3 {
-          margin: $pad-double 0 $pad-half 0;
-        }
+        font-family: $font-primary;
       }
     }
-    a:link, a:visited, a:hover, a:active { text-decoration: none; }
-    .card-human-centred_design {
-      background:
-        linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('../img/theme-bg-human-centred_design.jpg');
-      background-size: cover;
-      &:hover {
-        background:
-          linear-gradient( rgba(210,99,5,0.8), rgba(210,99,5,0.8)),
-          url('../img/theme-bg-human-centred_design.jpg');
-        background-size: cover;
-      }
+    .views-field-description {
+      position: relative;
+      padding-bottom: $pad;
+      font-size: 1.25em;
+      font-style: italic;
+      font-weight: 500;
+      p { margin-top: $pad-double; }
     }
-    .card-entrepreneurship {
-      background:
-        linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('../img/theme-bg-entrepreneurship.jpg');
-      background-size: cover;
-      &:hover {
-        background:
-          linear-gradient( rgba(210,99,5,0.8), rgba(210,99,5,0.8)),
-          url('../img/theme-bg-entrepreneurship.jpg');
-        background-size: cover;
-      }
+    hr {
+      position: relative;
+      height: 0;
+      width: 10%;
+      margin: 0 auto $pad auto;
+      border-bottom: thin solid $white;
     }
-    .card-foresight {
-      background:
-        linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('../img/theme-bg-foresight.jpg');
+
+    &:nth-child(1) {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('../img/theme-bg1.jpg');
       background-size: cover;
-      &:hover {
-        background:
-          linear-gradient( rgba(210,99,5,0.8), rgba(210,99,5,0.8)),
-          url('../img/theme-bg-foresight.jpg');
-        background-size: cover;
-      }
     }
-    .card-self_development {
-      background:
-        linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-        url('../img/theme-bg-self_development.jpg');
+    &:nth-child(2) {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('../img/theme-bg2.jpg');
       background-size: cover;
-      &:hover {
-        background:
-          linear-gradient( rgba(210,99,5,0.8), rgba(210,99,5,0.8)),
-          url('../img/theme-bg-self_development.jpg');
-        background-size: cover;
-      }
+    }
+    &:nth-child(3) {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('../img/theme-bg3.jpg');
+      background-size: cover;
+    }
+    &:nth-child(4) {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('../img/theme-bg4.jpg');
+      background-size: cover;
+    }
+
+    @include media-medium {
+      height: 18em;
+      // Fake padding without messing with border-box size
+      &:nth-child(odd) { border-right: $pad solid $white; }
+      padding-right: 0;
+      h2 { margin: $pad-double 0 $pad-half 0; }
     }
   }
 
+  .toolbox-gallery {
+    margin-top: $pad;
+  }
+
+  // .toolbox-gallery-wrapper {
+  //   background-color: $orange;
+  //   padding: $pad 0;
+  //   h2 { color: $white; }
+  // }
 }

@@ -6,6 +6,7 @@ class MediaItem {
   public $vid;          // vocabulary ID
   public $node;         //  node object
   public $title;
+  public $description;
   public $url;
   public $attachment_data;  // Attachment associative array
   public $file;             // File object
@@ -21,19 +22,20 @@ class MediaItem {
 
     $this->vid               = $node->vid;
     $this->title             = $node->title;
-    @$this->url              = $node->field_url['und'][0]['value'];
-    @$this->copyright_holder = $node->field_copyright_holder['und'][0]['value'];
-    @$this->usage_rights     = $node->field_usage_rights['und'][0]['value'];
+    // @$this->description      = $node->body[LANG][0]['safe_value'];
+    @$this->url              = $node->field_url[LANG][0]['value'];
+    @$this->copyright_holder = $node->field_copyright_holder[LANG][0]['value'];
+    @$this->usage_rights     = $node->field_usage_rights[LANG][0]['value'];
 
     if(!empty($node->field_creator)){
-      foreach($node->field_creator['und'] as $creator) {
+      foreach($node->field_creator[LANG] as $creator) {
         $person = new Person($creator['tid']);
         $this->creators[] = $person;
       }
     }
 
     if(!empty($node->field_attachment)) {
-      $this->attachment_data = $node->field_attachment['und'][0];
+      $this->attachment_data = $node->field_attachment[LANG][0];
       $this->file = file_load($this->attachment_data['fid']);
       $this->file->description = $this->title;
     }
@@ -50,7 +52,6 @@ class MediaItem {
     foreach ($this->creators as $creator) {
       $links[] = "<a href='{$creator->url()}'>{$creator->name}</a>";
     }
-    // print_r($links);die;
     return to_sentence($links);
   }
 
@@ -72,8 +73,10 @@ class MediaItem {
   }
 
   protected function _embed_attachment() {
-    // file_create_url($this->attachment_data['uri']);
-    return theme_file_link(array('file'=>$this->file));
+    $url = file_create_url($this->attachment_data['uri']);
+    $filesize = format_bytes($this->attachment_data['filesize']);
+    return "<a href='$url'>Download File</a> ($filesize)";
+    // return theme_file_link(array('file'=>$this->file));
   }
 
   protected function _embed_vimeo() {

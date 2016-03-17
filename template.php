@@ -4,6 +4,7 @@ $lib = dirname(__FILE__).'/lib';
 include "$lib/event.php";
 include "$lib/media_item.php";
 include "$lib/person.php";
+define('LANG', LANGUAGE_NONE);
 
 // function designjam_theme() {
   /* Customize login form */
@@ -31,8 +32,8 @@ function designjam_preprocess_html(&$vars) {
   // Slugs in menus
   $node = menu_get_object();
   if( $node = menu_get_object() ) {
-    if(isset($node->field_slug) &&  isset($node->field_slug['und'])) {
-      $slug = $node->field_slug['und'][0]['value'];
+    if(isset($node->field_slug) &&  isset($node->field_slug[LANG])) {
+      $slug = $node->field_slug[LANG][0]['value'];
       $vars['classes_array'][] = $slug;
     }
   }
@@ -47,6 +48,12 @@ function designjam_preprocess_html(&$vars) {
         $vars['theme_hook_suggestions'][] = $template_filename;
       }
     }
+  }
+
+  // Taxonomy term classes
+  if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
+    $term = taxonomy_term_load(arg(2));
+    $vars['classes_array'][] = 'taxonomy-'.$term->vocabulary_machine_name;
   }
 }
 
@@ -66,26 +73,40 @@ function designjam_preprocess_page(&$vars) {
     }
   }
 
-  // Remove taxonomy term page no content message?
+  // Remove taxonomy term page no content message
   if(isset($vars['page']['content']['system_main']['no_content'])) {
     unset($vars['page']['content']['system_main']['no_content']);
   }
 
-  // Taxonomy term templates, per vocabulary
+  // Setup for Taxonomy pages
   if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
     $term = taxonomy_term_load(arg(2));
+    // Set term to be available in template
+    $vars['taxonomy_term'] = $term;
+
+    // Taxonomy term templates, per vocabulary
     $vars['theme_hook_suggestions'][] = 'page__taxonomy__term__' . $term->vocabulary_machine_name;
+
+    // Add vocabulary to breadcrumb
+    $vocab_map = array(
+      'people'        => 'people',
+      'events'        => 'workshops',
+      'organizations' => 'organizations',
+      'toolbox'       => 'toolbox',
+    );
+
+    $breadcrumbs = array(l('Home', '<front>'));
+    $breadcrumbs[] = l(ucfirst($term->vocabulary_machine_name), $vocab_map[$term->vocabulary_machine_name]);
+    $parents =  taxonomy_get_parents_all($term->tid);
+    array_shift($parents);
+    foreach(array_reverse($parents) as $term) {
+      $breadcrumbs[] = l($term->name, url('taxonomy/term/' . $term->tid));
+    }
+    // $breadcrumbs[] = l(ucfirst($term->vocabulary_machine_name), $vocab_map[$term->vocabulary_machine_name]);
+    drupal_set_breadcrumb($breadcrumbs);
   }
-
 }
 
-function designjam_preprocess_node(&$vars) {
-  // $node = $vars['node'];
-  // $foo= /* get the value of this field from $node */ ;
-  // $vars['theme_hook_suggestions'][] = 'node__' . $foo;
-}
-
-// Block-specific templates
 function designjam_preprocess_block(&$vars) {
   $block = $vars['block'];
   if($block->region === 'highlighted') {
@@ -95,13 +116,28 @@ function designjam_preprocess_block(&$vars) {
   }
 }
 
+function designjam_preprocess_node(&$vars) {
+  if ($vars['submitted']) {
+    $vars['submitted'] = '';
+    // unset($vars['submitted']);
+  }
 
-// function designjam_preprocess_taxonomy_term(&$vars) {
-//   // print_r($vars);
-//   // $vars['vocabulary_machine_name'];
-// }
+  // Fix Media Item Title links
+  if($vars['type'] == 'media_item') {
+    if(!empty($vars['field_attachment'])) {
+      $vars['node_url'] = file_create_url($vars['field_attachment'][LANG][0]['uri']);
+    }
+    else {
+      $vars['node_url'] = $vars['field_url'][LANG][0]['value'];
+    }
+  }
+}
 
-// function designjam_preprocess_block(&$variables) {}
+function designjam_preprocess_taxonomy_term(&$vars) {
+  // print_r($vars);
+  // $vars['vocabulary_machine_name'];
+}
+
 function designjam_menu_tree__main_menu(array $variables) {
   return '<ul class="primary-nav" id="primary-nav">' . $variables['tree'] . '</ul>';
 }
@@ -111,6 +147,20 @@ function designjam_html_head_alter(&$head_elements) {
   unset ($head_elements['system_meta_generator']);
 }
 
+function designjam_breadcrumb($variables) {
+  $breadcrumb = $variables['breadcrumb'];
+  if (!empty($breadcrumb)) {
+    $breadcrumb[] = drupal_get_title();
+    $output = '<ol class="breadcrumbs">';
+    foreach ($breadcrumb as $value) {
+      $output .= '<li>' . $value . '</li>';
+    }
+    $output .= '</ol>';
+    return $output;
+  }
+}
+
+// Helper functions
 function slug($string) {
   $string = str_replace(' ', '_', $string);
   $string = str_replace(',', '', $string);
@@ -135,4 +185,14 @@ function to_sentence( $array = array() ) {
       break;
   }
   return $string;
+}
+
+function format_bytes($bytes, $precision = 2) {
+  if ($bytes >= 1073741824)  { $bytes = number_format($bytes / 1073741824, 2) . ' GB'; }
+  elseif ($bytes >= 1048576) { $bytes = number_format($bytes / 1048576, 2) . ' MB'; }
+  elseif ($bytes >= 1024)    { $bytes = number_format($bytes / 1024, 2) . ' KB'; }
+  elseif ($bytes > 1)        { $bytes = $bytes . ' bytes'; }
+  elseif ($bytes == 1)       { $bytes = $bytes . ' byte'; }
+  else                       { $bytes = '0 bytes'; }
+  return $bytes;
 }

@@ -16,16 +16,19 @@
 
 @import 'components/breadcrumbs';
 @import 'components/buttons';
+@import 'components/callout';
 @import 'components/event-card';
 @import 'components/icons';
 @import 'components/media';
 @import 'components/page-header';
+@import 'components/page-meta';
 @import 'components/summary';
 
 @import 'modules/site-header';
 @import 'modules/site-footer';
 @import 'modules/navigation';
-@import 'modules/people-list';
+@import 'modules/person-card';
+@import 'modules/person-list';
 @import 'modules/sponsors';
 @import 'modules/workshops';
 @import 'modules/highlights-hero';

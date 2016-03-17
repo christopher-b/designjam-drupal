@@ -5,3 +5,5 @@ Prioritize:
  - Toolbox
  Mailing List:
  - Mailchimp: ocadslab / Mr.p0stman
+
+Review Admin Guide

@@ -11,15 +11,22 @@ body.drupal.logged_in {
 
 // Components
 .tabs.primary {
+  clear: both;
   margin:0;
+  padding-top: $pad-and-half;
+  background-color: $white;
   border-bottom-color: $grey-light;
   color: $black;
   a:link { color: $black !important; }
   a:visited { color: $black !important; }
   li {
     position: relative;
-    top:-9px;
-    &.active { top: -8px; }
+    top:-6px;
+    &.active { top: -5px; }
+    a {
+      border: thin solid $grey-x-light;
+      border-bottom: none;
+    }
   }
   a {
     color: $black;

@@ -28,25 +28,4 @@ jQuery(function(){
       $nav.css('max-height', initialHeight);
     }
   }
-
-
-  // Collapse when nav menu links are clicked
-  // jQuery('#navbar-links li a').click(function(){
-  //   jQuery('#navbar-links').collapse('hide')
-  // })
-
-  // Fix smooth scrolling
-  // https://www.drupal.org/node/2396391
-  // jQuery('a[href*=#]:not([href=#])').click(function() {
-  //   if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-  //     var target = jQuery(this.hash);
-  //     target = target.length ? target : jQuery('[name=' + this.hash.slice(1) +']');
-  //     if (target.length) {
-  //       jQuery('html,body').animate({
-  //         scrollTop: target.offset().top
-  //       }, 1000);
-  //       return false;
-  //     }
-  //   }
-  // });
 });

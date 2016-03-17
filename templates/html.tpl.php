@@ -66,6 +66,6 @@
     // Closing markup
     print $page_bottom;
   ?>
-  <script src="<?php echo path_to_theme(); ?>/js/app.js"></script>
+  <script src="/<?php echo path_to_theme(); ?>/js/app.js"></script>
 </body>
 </html>

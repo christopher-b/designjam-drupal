@@ -66,7 +66,6 @@
  *
  * @ingroup themeable
  */
- // phpinfo();die;
 ?>
 <?php include './'. path_to_theme() .'/templates/header.tpl.php';?>
 
@@ -84,17 +83,12 @@
     ?>
   </div>
 
-  <section class="page-body-wrapper">
+  <div class="page-body-wrapper">
     <div class="page-body">
-
-      <?php
-      /*
-      <div class="page-meta-wrapper">
+      <?php if (!empty($tabs)): ?>
         <div class="page-meta">
-          <?php if (!empty($tabs)): ?>
-            <?php print render($tabs); ?>
-          <?php endif; ?>
-
+          <?php if (!empty($tabs)): print render($tabs); endif; ?>
+          <!--
           <?php if (!empty($messages)): ?>
             <div class="row messages">
               <?php print $messages; ?>
@@ -108,14 +102,12 @@
           <?php if (!empty($action_links)): ?>
             <ul class="action-links"><?php print render($action_links); ?></ul>
           <?php endif; ?>
+          -->
         </div>
-      </div>
-      */
-      ?>
-
+      <?php endif;?>
       <?php print render($page['content']); ?>
     </div>
-  </section>
+  </div>
 </div> <!-- /#page-content-wrapper -->
 
 <?php include './'. path_to_theme() .'/templates/footer.tpl.php';?>

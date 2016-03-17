@@ -1,0 +1,41 @@
+.person-card {
+  display: inline-block;
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+  vertical-align: top;
+  font-family: $font-secondary;
+  font-weight: 700;
+  font-size: 1.2em;
+
+  a { text-decoration: none; }
+  a:link, a:visited {
+    color: $purple;
+  }
+  a:hover { text-decoration: underline; }
+  img { width: 100%; }
+
+  .views-field-field-portrait {
+    // Crop from http://dabblet.com/gist/4711695
+    .field-content {
+      width: 100%;
+      overflow: hidden;
+      img {
+        width: 100%;
+        margin: -999em -100%;
+      }
+      &:before {
+        content: "";
+        padding-top: 100%; // Set this to your desired height(to width) ratio
+      }
+      &:before, img {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .people-core & { width: 32%; }
+  .people-contributors & { width: 24%; }
+
+}

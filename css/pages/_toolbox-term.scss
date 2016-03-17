@@ -1,37 +1,50 @@
-.toolbox-term {
-  .page-header-wrapper { background-color: $orange; }
-  .page-header {
+.taxonomy-toolbox {
+  .page-header-wrapper {
+    background-color: $orange;
     color: $white;
-    h1 {
-      border-bottom: thick solid $white;
-      display: inline-block;
+    a:link, a:visited { color: $white; }
+  }
+  .page-summary { clear: both; }
+  .page-content {
+    a:link, a:visited {
+      color: $orange;
     }
-    p { font-size: 1.25em; }
+  }
+  h2 {
+    a:link { text-decoration: none;}
+    a:hover { text-decoration: underline;}
+  }
+  .media-item {
+    border-bottom: thin solid $grey-x-light;
+    padding-bottom: $pad;
+    margin-bottom: $pad;
+    &:last-child { border: none;}
+  }
+  .field-name-field-tags .field-item {
+    display: inline;
+    margin-right: $pad-half;
   }
   .topic {
     background-color: $off-white;
     border-bottom: thin solid $grey-x-light;
     margin-bottom: $pad-double;
-
     h2 {
       padding: $pad-half;
       color: $white;
       background-color: $off-black;
-      font-family: $font-primary;
+      // font-family: $font-primary;
+      a:link, a:visited {
+        color: $white;
+        text-decoration: none;
+      }
+      a:hover { text-decoration: underline; }
     }
-    h3 {
-      color: $orange;
-      margin-bottom: 0;
-    }
-    a:link, a:visited {
-      color: $orange;
-    }
-    // .description {}
+    // h3 {
+    //   color: $orange;
+    //   margin-bottom: 0;
+    // }
 
-    .topic-content {
-      padding: 0 $pad $pad $pad;
-    }
+    .topic-content { padding: 0 $pad $pad $pad; }
     .feature { padding-right: $pad; }
-
   }
 }

@@ -2,6 +2,7 @@
   background-image: url("../img/blue-paper.png");
   background-color: $blue-medium-1;
   color: $white;
+  a { color: $white; }
   .button {
     background-color: $yellow-light;
     &:first-child { margin-right: $space; }

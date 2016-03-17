@@ -82,23 +82,30 @@
 <?php $event = new Event($node);?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-
   <div class="content"<?php print $content_attributes; ?>>
     <div class="col-3-4 event-description">
       <?php if(isset($event->summary) && !empty($event->summary)) : ?>
-        <div class="summary">
+        <div class="page-summary">
           <?php echo $event->summary;?>
         </div>
       <?php endif; ?>
-      <?php echo $event->description;?>
+      <?php if(!empty($event->image)) : ?>
+        <?php print $event->render_image(); ?>
+      <?php endif; ?>
+      <?php print $event->description;?>
+      <?php if(!empty($event->shownotes)) : ?>
+        <h2>Show Notes</h2>
+        <?php print $event->shownotes;?>
+      <?php endif; ?>
+
     </div>
     <?php if(!empty($event->people)): ?>
-      <div class="people-list col-1-4">
+      <div class="person-list col-1-4">
         <h2>Facilitators</h2>
         <?php foreach($event->people as $person):?>
           <div class="person">
-            <?php echo $person->render_portrait(); ?>
-            <p><a href="<?php echo $person->url();?>"><?php echo $person->name; ?></a></p>
+            <?php print $person->render_portrait(); ?>
+            <p><a href="<?php print $person->url();?>"><?php print $person->name; ?></a></p>
           </div>
         <?php endforeach;?>
       </div>

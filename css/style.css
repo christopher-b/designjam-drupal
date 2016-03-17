@@ -530,11 +530,6 @@ h1, h2, h3, h4, h5, h6 {
     color: #000000;
     text-decoration: underline; }
 
-.summary, .callout {
-  font-size: 1.2em;
-  font-weight: 700;
-  font-family: "MuseoSlab", Georgia, Times, "Times New Roman", serif; }
-
 /**
  * @license
  * MyFonts Webfont Build ID 2956769, 2015-01-20T13:50:45-0500
@@ -584,14 +579,14 @@ img, video, object {
   max-width: 100%;
   height: auto; }
 
-.clearfix, .cta-section {
+.clearfix, .cta-section, .taxonomy-people .page-header, .taxonomy-people .term-listing-heading {
   *zoom: 1; }
-  .clearfix:before, .cta-section:before, .clearfix:after, .cta-section:after {
+  .clearfix:before, .cta-section:before, .taxonomy-people .page-header:before, .taxonomy-people .term-listing-heading:before, .clearfix:after, .cta-section:after, .taxonomy-people .page-header:after, .taxonomy-people .term-listing-heading:after {
     content: " ";
     /* 1 */
     display: table;
     /* 2 */ }
-  .clearfix:after, .cta-section:after {
+  .clearfix:after, .cta-section:after, .taxonomy-people .page-header:after, .taxonomy-people .term-listing-heading:after {
     clear: both; }
 
 .clear {
@@ -662,7 +657,10 @@ body.drupal.logged_in {
     top: -195px; }
 
 .tabs.primary {
+  clear: both;
   margin: 0;
+  padding-top: 1.5em;
+  background-color: #ffffff;
   border-bottom-color: #4f4848;
   color: #000000; }
   .tabs.primary a:link {
@@ -671,9 +669,12 @@ body.drupal.logged_in {
     color: #000000 !important; }
   .tabs.primary li {
     position: relative;
-    top: -9px; }
+    top: -6px; }
     .tabs.primary li.active {
-      top: -8px; }
+      top: -5px; }
+    .tabs.primary li a {
+      border: thin solid #d9d9d9;
+      border-bottom: none; }
   .tabs.primary a {
     color: #000000;
     padding: 0;
@@ -745,11 +746,9 @@ body.drupal.logged_in {
 .container, .site-header,
 .site-footer,
 .page-content,
-.breadcrumbs,
-.page-meta,
 .page-header,
 .page-body,
-.sponsors {
+.sponsors, body.people .block {
   max-width: 992px;
   position: relative;
   margin: 0 auto;
@@ -774,7 +773,8 @@ body.drupal.logged_in {
 
 .breadcrumbs {
   font-family: "MuseoSlab", Georgia, Times, "Times New Roman", serif;
-  clear: both; }
+  clear: both;
+  margin-bottom: 1em; }
   .breadcrumbs li {
     display: inline; }
   .breadcrumbs li:after {
@@ -798,6 +798,9 @@ body.drupal.logged_in {
     background-color: #1669a2; }
   .button.yellow, .yellow.form-submit {
     background-color: #fbc101; }
+
+.callout {
+  font-size: 1.5em; }
 
 /* Single event listing */
 .event-card {
@@ -985,15 +988,21 @@ body.drupal.logged_in {
 .page-header h1 {
   border-bottom: thick solid;
   float: left;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
   margin-right: 1.3em; }
 
 .view-header {
   font-size: 1.5rem; }
 
-.summary {
-  font-weight: 700;
-  font-size: 1.2em; }
+.page-meta {
+  background-color: #ffffff;
+  padding-bottom: 1em; }
+
+.page-summary {
+  clear: both;
+  font-size: 1.5em; }
+  .page-summary p {
+    margin-bottom: 0; }
 
 .site-header-wrapper {
   background: #060505;
@@ -1158,10 +1167,44 @@ body.drupal.logged_in {
     #nav-toggle {
       display: none; } }
 
-.people-list {
+.person-card {
+  display: inline-block;
+  width: 100%;
+  padding: 1em;
+  text-align: center;
+  vertical-align: top;
+  font-family: "MuseoSlab", Georgia, Times, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.2em; }
+  .person-card a {
+    text-decoration: none; }
+  .person-card a:link, .person-card a:visited {
+    color: #8e2bc7; }
+  .person-card a:hover {
+    text-decoration: underline; }
+  .person-card img {
+    width: 100%; }
+  .person-card .views-field-field-portrait .field-content {
+    width: 100%;
+    overflow: hidden; }
+    .person-card .views-field-field-portrait .field-content img {
+      width: 100%;
+      margin: -999em -100%; }
+    .person-card .views-field-field-portrait .field-content:before {
+      content: "";
+      padding-top: 100%; }
+    .person-card .views-field-field-portrait .field-content:before, .person-card .views-field-field-portrait .field-content img {
+      display: inline-block;
+      vertical-align: middle; }
+  .people-core .person-card {
+    width: 32%; }
+  .people-contributors .person-card {
+    width: 24%; }
+
+.person-list {
   color: #4f4848;
   text-align: center; }
-  .people-list h2 {
+  .person-list h2 {
     color: #faa440; }
 
 .sponsors-wrapper {
@@ -1229,6 +1272,8 @@ body.drupal.logged_in {
   background-image: url("../img/gray-paper.png");
   background-size: 100%;
   color: #ffffff; }
+  .intro a {
+    color: #ffffff; }
   .intro .photo {
     display: none; }
   .intro .call-to-action {
@@ -1287,9 +1332,7 @@ body.drupal.logged_in {
         float: none; }
         .cta-section .image img {
           max-width: 4em; }
-      .cta-section a:hover {
-        text-decoration: none; }
-      .cta-section a:active {
+      .cta-section a:link, .cta-section a:active, .cta-section a:hover {
         text-decoration: none; }
       .cta-section.bigtent .image img {
         max-width: 6em; }
@@ -1304,6 +1347,8 @@ body.drupal.logged_in {
   background-image: url("../img/blue-paper.png");
   background-color: #1669a2;
   color: #ffffff; }
+  .highlight.bigtent a {
+    color: #ffffff; }
   .highlight.bigtent .button, .highlight.bigtent .form-submit {
     background-color: #fbc101;
     margin-bottom: 1em; }
@@ -1345,6 +1390,8 @@ body.drupal.logged_in {
   background-color: #d26305;
   background-size: 100%;
   padding-bottom: 2em; }
+  .toolbox.highlight a {
+    color: #ffffff; }
   .toolbox.highlight .links {
     margin-bottom: 1em; }
   @media (min-width: 992px) {
@@ -1437,11 +1484,16 @@ body.node-type-event .event-header-info, body.page-workshops .event-header-info 
   padding: 1em; }
 body.node-type-event .event-header-image, body.page-workshops .event-header-image {
   background-color: #fff;
-  height: 228px; }
+  height: 228px;
+  padding-right: 0; }
 body.node-type-event .event-card-meta, body.page-workshops .event-card-meta {
   margin-bottom: 1em; }
 body.node-type-event .event-description, body.page-workshops .event-description {
   margin-bottom: 1em; }
+  body.node-type-event .event-description h2, body.page-workshops .event-description h2 {
+    color: #faa440;
+    margin-top: 1em;
+    margin-bottom: 0.5em; }
 body.node-type-event .node-event, body.page-workshops .node-event {
   background-color: #ffffff;
   padding: 1em;
@@ -1450,129 +1502,157 @@ body.node-type-event .node-event, body.page-workshops .node-event {
     color: #333333; }
   body.node-type-event .node-event a:visited, body.page-workshops .node-event a:visited {
     color: #333333; }
-body.node-type-event .summary, body.page-workshops .summary {
+body.node-type-event .page-summary, body.page-workshops .page-summary {
   color: #40ae49;
   border-bottom: 2px solid #40ae49;
-  padding-bottom: 1em;
   margin-bottom: 1em; }
 
 body.page-workshops .event {
   margin: 0; }
-body.page-workshops .page-header-wrapper {
-  margin-bottom: 1em; }
 
-body.page-people .page-header-wrapper {
+.node-type-page .page-summary {
+  clear: both; }
+
+body.people .page-header-wrapper, .taxonomy-people .page-header-wrapper {
   background-color: #8e2bc7;
   color: #ffffff; }
-
-.toolbox .page-header-wrapper {
-  background-color: #d26305; }
-.toolbox .page-header {
-  color: #ffffff; }
-  .toolbox .page-header h1 {
-    color: #ffffff;
-    float: left;
-    margin-right: 1.3em;
-    border-bottom: thick solid #ffffff; }
-  .toolbox .page-header .page-description {
-    float: left;
-    font-size: 1.5rem; }
-.toolbox .toolbox-gallery-wrapper {
-  background-color: #d26305; }
-  .toolbox .toolbox-gallery-wrapper h2 {
+  body.people .page-header-wrapper a, body.people .page-header-wrapper a:link, .taxonomy-people .page-header-wrapper a, .taxonomy-people .page-header-wrapper a:link {
     color: #ffffff; }
-.toolbox .cta, .toolbox .cta-sub {
-  color: #d26305;
-  text-align: center; }
-.toolbox .cta {
-  margin-bottom: 0;
-  font-size: 2em;
-  font-family: "MuseoSlab", Georgia, Times, "Times New Roman", serif;
-  font-weight: 900; }
-.toolbox .cta-sub {
-  font-size: 1.5rem; }
-.toolbox .themes .card {
-  position: relative;
-  margin-bottom: 1em;
-  padding-top: 2em;
-  text-align: center;
-  color: #ffffff; }
-  .toolbox .themes .card h3 {
-    font-family: "MuseoSans", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
-    font-size: 1.5em;
-    font-weight: 700;
-    font-style: normal; }
-  .toolbox .themes .card p {
-    padding-bottom: 1em;
-    font-style: italic;
-    font-weight: 500;
-    font-size: 1.25em; }
-  .toolbox .themes .card hr {
-    position: relative;
-    height: 0;
-    width: 10%;
-    margin: 0 auto 1em auto;
-    border-bottom: thin solid #ffffff; }
-  @media (min-width: 768px) {
-    .toolbox .themes .card {
-      height: 18em; }
-      .toolbox .themes .card:nth-child(odd) {
-        border-right: 1em solid #ffffff; }
-      .toolbox .themes .card h3 {
-        margin: 2em 0 0.5em 0; } }
-.toolbox .themes a:link, .toolbox .themes a:visited, .toolbox .themes a:hover, .toolbox .themes a:active {
-  text-decoration: none; }
-.toolbox .themes .card-human-centred_design {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/theme-bg-human-centred_design.jpg");
-  background-size: cover; }
-  .toolbox .themes .card-human-centred_design:hover {
-    background: linear-gradient(rgba(210, 99, 5, 0.8), rgba(210, 99, 5, 0.8)), url("../img/theme-bg-human-centred_design.jpg");
-    background-size: cover; }
-.toolbox .themes .card-entrepreneurship {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/theme-bg-entrepreneurship.jpg");
-  background-size: cover; }
-  .toolbox .themes .card-entrepreneurship:hover {
-    background: linear-gradient(rgba(210, 99, 5, 0.8), rgba(210, 99, 5, 0.8)), url("../img/theme-bg-entrepreneurship.jpg");
-    background-size: cover; }
-.toolbox .themes .card-foresight {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/theme-bg-foresight.jpg");
-  background-size: cover; }
-  .toolbox .themes .card-foresight:hover {
-    background: linear-gradient(rgba(210, 99, 5, 0.8), rgba(210, 99, 5, 0.8)), url("../img/theme-bg-foresight.jpg");
-    background-size: cover; }
-.toolbox .themes .card-self_development {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/theme-bg-self_development.jpg");
-  background-size: cover; }
-  .toolbox .themes .card-self_development:hover {
-    background: linear-gradient(rgba(210, 99, 5, 0.8), rgba(210, 99, 5, 0.8)), url("../img/theme-bg-self_development.jpg");
-    background-size: cover; }
+body.people .views-field-field-portrait .field-content,
+body.people .field-name-field-portrait .field-item, .taxonomy-people .views-field-field-portrait .field-content,
+.taxonomy-people .field-name-field-portrait .field-item {
+  border-radius: 50%; }
 
-.toolbox-term .page-header-wrapper {
-  background-color: #d26305; }
-.toolbox-term .page-header {
+body.people .view-header {
+  font-size: 1em;
+  margin-top: 1em;
+  color: #8e2bc7; }
+body.people .view-content {
+  text-align: center; }
+body.people .views-field-field-short-description {
+  font-family: "MuseoSans", "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+  font-weight: normal; }
+
+.taxonomy-people .page-header-wrapper {
+  margin-bottom: 1em; }
+.taxonomy-people .field {
+  float: left;
+  clear: left; }
+.taxonomy-people .field-name-field-portrait {
+  width: 33%;
+  float: right; }
+  .taxonomy-people .field-name-field-portrait img {
+    width: 100%; }
+.taxonomy-people .node-media-item, .taxonomy-people .node-event {
+  display: none; }
+
+.toolbox {
+  color: #d26305; }
+  .toolbox .page-header-wrapper {
+    background-color: #d26305; }
+  .toolbox .page-header {
+    color: #ffffff; }
+  .toolbox .view-header {
+    text-align: center;
+    padding-top: 0.5em; }
+    .toolbox .view-header strong {
+      font-size: 1.25em;
+      font-family: "MuseoSlab", Georgia, Times, "Times New Roman", serif;
+      font-weight: 900; }
+  .toolbox .toolbox-card {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1em;
+    padding-top: 1em;
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center; }
+    .toolbox .toolbox-card a, .toolbox .toolbox-card a:link, .toolbox .toolbox-card a:visited {
+      color: #ffffff;
+      text-decoration: none; }
+    .toolbox .toolbox-card a:hover {
+      text-decoration: underline; }
+    .toolbox .toolbox-card .views-field-name {
+      position: relative; }
+      .toolbox .toolbox-card .views-field-name h2 {
+        font-weight: 700;
+        font-style: normal;
+        font-family: "MuseoSans", "HelveticaNeue", "Helvetica", "Arial", sans-serif; }
+    .toolbox .toolbox-card .views-field-description {
+      position: relative;
+      padding-bottom: 1em;
+      font-size: 1.25em;
+      font-style: italic;
+      font-weight: 500; }
+      .toolbox .toolbox-card .views-field-description p {
+        margin-top: 2em; }
+    .toolbox .toolbox-card hr {
+      position: relative;
+      height: 0;
+      width: 10%;
+      margin: 0 auto 1em auto;
+      border-bottom: thin solid #ffffff; }
+    .toolbox .toolbox-card:nth-child(1) {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/theme-bg1.jpg");
+      background-size: cover; }
+    .toolbox .toolbox-card:nth-child(2) {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/theme-bg2.jpg");
+      background-size: cover; }
+    .toolbox .toolbox-card:nth-child(3) {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/theme-bg3.jpg");
+      background-size: cover; }
+    .toolbox .toolbox-card:nth-child(4) {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/theme-bg4.jpg");
+      background-size: cover; }
+    @media (min-width: 768px) {
+      .toolbox .toolbox-card {
+        height: 18em;
+        padding-right: 0; }
+        .toolbox .toolbox-card:nth-child(odd) {
+          border-right: 1em solid #ffffff; }
+        .toolbox .toolbox-card h2 {
+          margin: 2em 0 0.5em 0; } }
+  .toolbox .toolbox-gallery {
+    margin-top: 1em; }
+
+.taxonomy-toolbox .page-header-wrapper {
+  background-color: #d26305;
   color: #ffffff; }
-  .toolbox-term .page-header h1 {
-    border-bottom: thick solid #ffffff;
-    display: inline-block; }
-  .toolbox-term .page-header p {
-    font-size: 1.25em; }
-.toolbox-term .topic {
+  .taxonomy-toolbox .page-header-wrapper a:link, .taxonomy-toolbox .page-header-wrapper a:visited {
+    color: #ffffff; }
+.taxonomy-toolbox .page-summary {
+  clear: both; }
+.taxonomy-toolbox .page-content a:link, .taxonomy-toolbox .page-content a:visited {
+  color: #d26305; }
+.taxonomy-toolbox h2 a:link {
+  text-decoration: none; }
+.taxonomy-toolbox h2 a:hover {
+  text-decoration: underline; }
+.taxonomy-toolbox .media-item {
+  border-bottom: thin solid #d9d9d9;
+  padding-bottom: 1em;
+  margin-bottom: 1em; }
+  .taxonomy-toolbox .media-item:last-child {
+    border: none; }
+.taxonomy-toolbox .field-name-field-tags .field-item {
+  display: inline;
+  margin-right: 0.5em; }
+.taxonomy-toolbox .topic {
   background-color: #f8f8f8;
   border-bottom: thin solid #d9d9d9;
   margin-bottom: 2em; }
-  .toolbox-term .topic h2 {
+  .taxonomy-toolbox .topic h2 {
     padding: 0.5em;
     color: #ffffff;
-    background-color: #333333;
-    font-family: "MuseoSans", "HelveticaNeue", "Helvetica", "Arial", sans-serif; }
-  .toolbox-term .topic h3 {
-    color: #d26305;
-    margin-bottom: 0; }
-  .toolbox-term .topic a:link, .toolbox-term .topic a:visited {
-    color: #d26305; }
-  .toolbox-term .topic .topic-content {
+    background-color: #333333; }
+    .taxonomy-toolbox .topic h2 a:link, .taxonomy-toolbox .topic h2 a:visited {
+      color: #ffffff;
+      text-decoration: none; }
+    .taxonomy-toolbox .topic h2 a:hover {
+      text-decoration: underline; }
+  .taxonomy-toolbox .topic .topic-content {
     padding: 0 1em 1em 1em; }
-  .toolbox-term .topic .feature {
+  .taxonomy-toolbox .topic .feature {
     padding-right: 1em; }
 
 /*# sourceMappingURL=style.css.map */

@@ -81,24 +81,6 @@
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
-  <?php
-  /*
-  <?php if(isset($event->summary)) : ?>
-    <div class="summary">
-      <?php echo $event->summary;?>
-    </div>
-  <?php endif; ?>
-  */
-  ?>
-
-
-<?php  //print_r($node); die;?>
-  <?php if(isset($node->body['und'][0]['safe_summary'])) : ?>
-    <div class="summary">
-      <?php print $node->body['und'][0]['safe_summary']; ?>
-    </div>
-  <?php endif; ?>
-
   <?php print $user_picture; ?>
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>

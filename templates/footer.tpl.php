@@ -10,7 +10,7 @@
       <h2>Contact</h2>
       <ul>
         <li class="email">
-          <a href="mailto:designjam@ocadu.ca??subject=DesignJam">designjam@ocadu.ca</a>
+          <a href="mailto:designjam@ocadu.ca?subject=DesignJam">designjam@ocadu.ca</a>
         </li>
         <li class="twitter">
           <a href="https://twitter.com/designjamca" target="_blank">@DesignJamCA</a>

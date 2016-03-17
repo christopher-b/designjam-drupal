@@ -4,4 +4,5 @@
   li { display: inline; }
   li:after { content: " / "; }
   li:last-child:after { content: none; }
+  margin-bottom: $pad;
 }

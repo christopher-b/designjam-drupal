@@ -34,7 +34,6 @@
     <?php endif;?>
   </div>
   <div class="event-card-description">
-    <?php //print $event->description;?>
     <?php print $event->summary;?>
   </div>
   <div class="event-card-register ">

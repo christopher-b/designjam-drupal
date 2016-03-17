@@ -1,18 +1,45 @@
-body.page-people {
-  .page-header-wrapper {
+body.people, .taxonomy-people {
+  .page-header-wrapper{
     background-color: $purple;
     color: $white;
+    a, a:link {color: $white; }
   }
-  // .page-header {
-  //   // padding: 0;
-  //   .page-description {
-  //     float: left;
-  //     font-size: 1.5rem;
-  //   }
-  // }
+  .views-field-field-portrait .field-content,
+  .field-name-field-portrait .field-item {
+    border-radius: 50%;
+  }
 }
 
-// body.page.person {
-//
-//   // a { &:link,&:active,&:hover,&:visited { color: $black;} }
-// }
+// Listing page
+body.people {
+  .block { @extend .container; }
+  .page-header-wrapper {
+  }
+  .view-header {
+    font-size: 1em;
+    margin-top: $pad;
+    color: $purple;
+  }
+  .view-content { text-align: center; }
+  .views-field-field-short-description {
+    font-family: $font-primary;
+    font-weight: normal;
+  }
+}
+
+// Detail page
+.taxonomy-people {
+  .page-header-wrapper{ margin-bottom: $pad; }
+  .page-header { @extend .clearfix; }
+  .field {
+     float: left;
+     clear: left;
+  }
+  .field-name-field-portrait {
+    width: 33%;
+    float:right;
+    img { width: 100%; }
+  }
+  .node-media-item, .node-event { display: none; }
+  .term-listing-heading { @extend .clearfix; }
+}
