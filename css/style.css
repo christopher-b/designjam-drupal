@@ -1325,7 +1325,8 @@ body.drupal.logged_in {
       .cta-section p {
         display: block;
         font-weight: 500;
-        font-size: 1.25rem; }
+        font-size: 1.25rem;
+        color: #ffffff; }
       .cta-section .image {
         width: 100%;
         height: 6em;
@@ -1472,6 +1473,8 @@ Error Message
 Container for success message.
 
 */
+body.node-type-event .page-meta, body.page-workshops .page-meta {
+  background-color: inherit; }
 body.node-type-event .page-header-wrapper, body.page-workshops .page-header-wrapper {
   padding-bottom: 0; }
 body.node-type-event .event-header-wrapper, body.page-workshops .event-header-wrapper {
@@ -1505,7 +1508,8 @@ body.node-type-event .node-event, body.page-workshops .node-event {
 body.node-type-event .page-summary, body.page-workshops .page-summary {
   color: #40ae49;
   border-bottom: 2px solid #40ae49;
-  margin-bottom: 1em; }
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em; }
 
 body.page-workshops .event {
   margin: 0; }
