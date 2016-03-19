@@ -12,9 +12,7 @@ body.people, .taxonomy-people {
 
 // Listing page
 body.people {
-  .block { @extend .container; }
-  .page-header-wrapper {
-  }
+  .page-header-wrapper { }
   .view-header {
     font-size: 1em;
     margin-top: $pad;

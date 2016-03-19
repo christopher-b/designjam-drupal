@@ -10,11 +10,13 @@
  - A bunch of stuff is hard-coded into the templates, for now.
 
 ## The Home Page
-The home page content are “Blocks”, except for the workshops section. They are assigned to the “Highlighted” region. The intro text for each block can be edited by going to Structure > Block > Configure. Each block has a custom template file, so anything other than the intro text can only be changed by modifying that file. This was the fastest way to get the job done, but I’m hoping to, down the road, make all of the content accessible from the admin pages.
+The home page content are “Blocks”  assigned to the “Highlighted” region. The intro text for each block can be edited by going to Structure > Block > Configure. Each block has a custom template file, so anything other than the intro text can only be changed by modifying that file. This was the fastest way to get the job done, but I’m hoping to, down the road, make all of the content accessible from the admin pages.
+
+The "Workshops" section is a view block, so the contents of this block are modified through the view, not the block.
 
 
 ## Workshops
-The workshops home page section and listing page are *View Displays*. The intro text for these section can be configured in the Events View: Structure > Views > Events / Edit > Header / Global:Text Area. This view loads a list of “events”, which are a custom content type. There are also custom templates for the display of these items.
+The workshops home page section and listing page are *View Displays*. The intro text for these section can be configured in the Events View: Structure > Views > Events (Edit) > Header / Global:Text Area. This view loads a list of “events”, which are a custom content type. There are also custom templates for the display of these items.
 
 To add an event, create a new *Event* content item (“Add Content > Event”). Some relevant fields:
 

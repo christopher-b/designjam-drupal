@@ -17,8 +17,9 @@
   @extend .container;
 }
 .page-header-wrapper {
-  padding-top:    $pad-double;
+  padding-top:    $pad;
   padding-bottom: $pad;
+  @include media-medium { padding-top:    $pad-double; }
 }
 .page-content-wrapper { padding-bottom: $pad-double; }
 
