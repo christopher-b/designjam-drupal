@@ -37,6 +37,8 @@ Toolbox entries ("Themes" and "Topics") are terms in the "Toolbox Categories" ta
 
 You can add content to the "Topics" by creating "Media Items", which are a custom content type: Content > Add Content > Media Item. You can upload a file or copy a link to a video or other external resource. If you’re uploading a file, use the Attachment field and leave URL blank. If you’re embedding something like a Vimeo video, copy and paste the video link into the URL field. It will be smart about embedding this content, but so far only supports Vimeo videos. Anything other URLs will be treated like external links and will just open that url in a new tab. People associated with Media Items will be linked to from that item.
 
+ - TODO: blocks on this page.
+
 ## People
 You can add "people" as taxonomy terms, and attach them to media items in the Creator field. People can have bios, portraits, etc. Don’t use the top-level "people" link, that’s for adding admin users to the site. There is a flag, "Core team" which determines how people appear on the People listing page: core team members are emphasized.
 
