@@ -16,8 +16,7 @@
   }
   .media-item {
     border-bottom: thin solid $grey-x-light;
-    padding-bottom: $pad;
-    margin-bottom: $pad;
+    padding: $pad;
     &:last-child { border: none;}
   }
   .field-name-field-tags .field-item {
@@ -32,17 +31,13 @@
       padding: $pad-half;
       color: $white;
       background-color: $off-black;
-      // font-family: $font-primary;
+      margin-bottom: 0;
       a:link, a:visited {
         color: $white;
         text-decoration: none;
       }
       a:hover { text-decoration: underline; }
     }
-    // h3 {
-    //   color: $orange;
-    //   margin-bottom: 0;
-    // }
 
     .topic-content { padding: 0 $pad $pad $pad; }
     .feature { padding-right: $pad; }

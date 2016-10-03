@@ -3026,7 +3026,6 @@ label {
 .event-card {
   position: relative;
   margin: 1em 0;
-  padding: 1em;
   border-bottom: 4px solid #266628;
   color: #4f4848;
   background-color: #ffffff;
@@ -3046,6 +3045,9 @@ label {
     .event-card .event-card-description {
       width: 66%;
       float: left; } }
+
+.event-card-contents {
+  padding: 1em; }
 
 .event-card-title {
   margin-bottom: 0.5em;
@@ -3206,7 +3208,6 @@ label {
     height: 100%; }
 
 .page-header h1 {
-  border-bottom: thick solid;
   float: left;
   margin-bottom: 0.5em;
   margin-right: 1.3em; }
@@ -3235,15 +3236,17 @@ label {
       color: #ffffff;
       text-decoration: none; }
   .site-header-wrapper .logo {
-    position: relative;
     float: left;
-    width: 60%;
-    padding: 1em;
-    padding-right: 0;
-    max-width: 415px; }
+    position: relative;
+    width: 33%;
+    top: 5px;
+    padding: 1em 0; }
+    @media (max-width: 767px) {
+      .site-header-wrapper .logo {
+        width: 60%; } }
     @media (min-width: 992px) {
       .site-header-wrapper .logo {
-        top: 1.75em; } }
+        width: 33%; } }
   @media only screen and (min-width: 880px) {
     .site-header-wrapper {
       height: 132px;
@@ -3334,7 +3337,10 @@ label {
       margin: 0; } }
 
 .primary-nav {
+  position: relative;
+  top: 2.5em;
   text-align: center;
+  font-size: 1.2em;
   clear: both;
   -webkit-transition: all 0.4s ease-out;
   -moz-transition: all 0.4s ease-out;
@@ -3352,15 +3358,15 @@ label {
     .primary-nav {
       clear: none;
       float: right;
-      position: relative;
-      top: 3.5em;
-      margin-right: 1.5em;
-      font-size: 1em; }
+      margin-right: 1.5em; }
       .primary-nav li {
         float: left;
         margin-left: 2em; }
       .primary-nav li:first-child {
         margin-left: 0; } }
+  @media (max-width: 767px) {
+    .primary-nav {
+      top: 0; } }
   @media (min-width: 992px) {
     .primary-nav {
       top: 2.5em;
@@ -3404,18 +3410,20 @@ label {
     text-decoration: underline; }
   .person-card img {
     width: 100%; }
-  .person-card .views-field-field-portrait .field-content {
-    width: 100%;
-    overflow: hidden; }
-    .person-card .views-field-field-portrait .field-content img {
+  .person-card .views-field-field-portrait {
+    margin-bottom: 1em; }
+    .person-card .views-field-field-portrait .field-content {
       width: 100%;
-      margin: -999em -100%; }
-    .person-card .views-field-field-portrait .field-content:before {
-      content: "";
-      padding-top: 100%; }
-    .person-card .views-field-field-portrait .field-content:before, .person-card .views-field-field-portrait .field-content img {
-      display: inline-block;
-      vertical-align: middle; }
+      overflow: hidden; }
+      .person-card .views-field-field-portrait .field-content img {
+        width: 100%;
+        margin: -999em -100%; }
+      .person-card .views-field-field-portrait .field-content:before {
+        content: "";
+        padding-top: 100%; }
+      .person-card .views-field-field-portrait .field-content:before, .person-card .views-field-field-portrait .field-content img {
+        display: inline-block;
+        vertical-align: middle; }
 
 .person-list {
   color: #4f4848;
@@ -3627,68 +3635,27 @@ label {
 
 .highlight.mailing-list {
   text-align: center; }
-  .highlight.mailing-list .mce_inline_error {
-    margin: 1em;
-    width: 50%;
-    margin: auto; }
-  .highlight.mailing-list .button, .highlight.mailing-list .form-submit {
-    margin: 1em; }
+  .highlight.mailing-list .headline {
+    font-family: "MuseoSlab", Georgia, Times, "Times New Roman", serif;
+    font-weight: bold;
+    color: #f8a44c;
+    margin: 0; }
+  .highlight.mailing-list input[type=email] {
+    background-color: #ebebec;
+    border: none;
+    padding: 8px;
+    color: #b4b6b8;
+    box-shadow: none; }
+  .highlight.mailing-list input[type=submit] {
+    background-color: #84ae3e;
+    color: #fff;
+    font-family: "MuseoSlab", Georgia, Times, "Times New Roman", serif;
+    font-weight: bold;
+    border: none;
+    padding: 10px 8px 6px 8px;
+    position: relative;
+    top: 2px; }
 
-/*
-### Base
- - #mc_embed_signup
-DIV Element
-This DIV element wraps around the form. Use this selector in front of the other selectors below to ensure styles get applied. (e.g. #mc_embed_signup .mc-field-group)
- - #mc-embedded-subscribe-form
-FORM Element
-Use this selector to set styles on the main form element. Useful for increasing padding around form elements.
- - div.mc-field-group
-Field Group
-Wrapper for each label and input combination on forms with more than one field. Use this to control horizontal and vertical spacing (padding) between inputs. Some .mc-field-group elements also have a .size1of2 class which makes them half size to fit 2 per row.
- - div.mc-field-group label
-Labels
-Default label selector. Use this to style most form labels.
- - div.mc-field-group input
-Input(s)
-Default input selector. Use this to style most form inputs.
- - div.mc-field-group select
-Drop-down Menus
-Default select (drop-down) selector. Use this to style all drop-down menus.
- - input.button
-Submit Button
-Use this selector to style the submit button.
-
-
-### Required Fields
- - .indicates-required
-DIV Element
-Container for "*indicates required" message at top of form.
- - .mc-field-group .asterisk
-SPAN Element
-Container for "*" on labels that are required.
-
-
-### Response Messages (Ajax)
- - #mce-responses
-DIV Element
-Container for error responses.
- - div.response
-DIV Element
-Default response message container. This will need to be set to display:none; by default so they don't show as empty styled boxes. The JS will write in an inline style display:block to show them when needed.
- - div.mce_inline_error
-DIV Element
-Div with error message place below inputs that have a problem.
- - input.mce_inline_error
-Input(s)
-The .mce_inline_error class is also added to inputs to add a red border.
- - #mce-error-response
-Error Message
-Container for non-input-specific error message.
- - #mce-success-response
-Error Message
-Container for success message.
-
-*/
 body.node-type-event .page-header-wrapper, body.page-workshops .page-header-wrapper {
   padding-bottom: 0; }
 body.node-type-event .event-header-wrapper, body.page-workshops .event-header-wrapper {
@@ -3702,7 +3669,9 @@ body.node-type-event .event-header-info, body.page-workshops .event-header-info 
 body.node-type-event .event-header-image, body.page-workshops .event-header-image {
   background-color: #fff;
   height: 228px;
-  padding-right: 0; }
+  padding-right: 0;
+  float: right;
+  margin-bottom: 2px; }
 body.node-type-event .event-card-meta, body.page-workshops .event-card-meta {
   margin-bottom: 1em; }
 body.node-type-event .event-description, body.page-workshops .event-description {
@@ -3755,12 +3724,12 @@ body.people .views-field-field-short-description {
 
 .taxonomy-people .page-header-wrapper {
   margin-bottom: 1em; }
-.taxonomy-people .field {
-  float: left;
-  clear: left; }
+.taxonomy-people .field-name-field-short-description {
+  font-weight: bold; }
 .taxonomy-people .field-name-field-portrait {
   width: 33%;
-  float: right; }
+  float: right;
+  margin-left: 2em; }
   .taxonomy-people .field-name-field-portrait img {
     width: 100%; }
 .taxonomy-people .node-media-item, .taxonomy-people .node-event {
@@ -3872,8 +3841,7 @@ ul.toolbox2 li {
   text-decoration: underline; }
 .taxonomy-toolbox .media-item {
   border-bottom: thin solid #d9d9d9;
-  padding-bottom: 1em;
-  margin-bottom: 1em; }
+  padding: 1em; }
   .taxonomy-toolbox .media-item:last-child {
     border: none; }
 .taxonomy-toolbox .field-name-field-tags .field-item {
@@ -3886,7 +3854,8 @@ ul.toolbox2 li {
   .taxonomy-toolbox .topic h2 {
     padding: 0.5em;
     color: #ffffff;
-    background-color: #333333; }
+    background-color: #333333;
+    margin-bottom: 0; }
     .taxonomy-toolbox .topic h2 a:link, .taxonomy-toolbox .topic h2 a:visited {
       color: #ffffff;
       text-decoration: none; }

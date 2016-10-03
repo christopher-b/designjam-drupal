@@ -11,19 +11,25 @@
     }
   }
   .logo {
+    float: left;
     position: relative;
-    float:left;
-    width: 60%;
-    padding: $pad;
-    padding-right: 0;
-    max-width: 415px;
-    @include media-large { top: 1.75em; }
+    width: 33%;
+    top:5px;
+    padding: $pad 0;
+    @include media-small {
+      width: 60%;
+    }
+    @include media-large {
+      width: 33%;
+    }
   }
+
   // Full-width
   @include media-min($bp-navigation) {
     height: 132px;
     overflow: visible;
   }
+
   // Account for Drupal admin menu
   body.logged_in .page-wrapper & {
     position: fixed;

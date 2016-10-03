@@ -48,21 +48,16 @@ jQuery(function(){
       var itemCategory = $this.attr('data-toolbox-category');
       var itemType = $this.attr('data-toolbox-type');
       var itemDuration = $this.attr('data-toolbox-duration');
-      // var show = false;
       if(undefined != category && (category != 0 && itemCategory != category)){
         return $this.hide();
-        // show = true;
       }
       if(undefined != type && (type != 'all' && itemType != type)){
         return $this.hide();
-        // show = true;
       }
       if(undefined != duration && (duration != 'all' && itemDuration != duration)){
         return $this.hide();
-        // show = true;
       }
       $this.show();
-      // show ? $this.show() : $this.hide();
     });
 
   });

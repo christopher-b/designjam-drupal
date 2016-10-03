@@ -29,7 +29,7 @@
       </div>
 
       <div class="events-cta cta-section col-1-3">
-        <a href="#workshops">
+        <a href="/workshops">
           <div class="image">
             <img src="<?php print path_to_theme();?>/img/icon_workshops.png" />
           </div>
@@ -39,7 +39,7 @@
       </div>
 
       <div class="toolbox cta-section col-1-3">
-        <a href="#toolbox">
+        <a href="/toolbox">
           <div class="image">
             <img src="<?php print path_to_theme();?>/img/icon_toolbox.png" />
           </div>

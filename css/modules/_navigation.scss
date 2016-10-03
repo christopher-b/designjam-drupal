@@ -1,6 +1,10 @@
 .primary-nav {
+  position: relative;
+  top: 2.5em;
   text-align: center;
+  font-size: 1.2em;
   clear:both;
+
   li {
     list-style: none;
     list-style-type: none !important;
@@ -12,15 +16,15 @@
   @include media-min($bp-navigation) {
     clear: none;
     float: right;
-    position: relative;
-    top: 3.5em;
     margin-right: 1.5em;
-    font-size: 1em;
     li {
       float: left;
       margin-left: $pad-double;
     }
     li:first-child { margin-left: 0; }
+  }
+  @include media-small {
+    top:0;
   }
   @include media-large {
     top: 2.5em;

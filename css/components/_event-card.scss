@@ -2,7 +2,6 @@
 .event-card {
   position: relative;
   margin: $space 0;
-  padding: $pad;
   border-bottom: 4px solid $green-dark;
   color: $grey-light;
   background-color: $white;
@@ -20,6 +19,9 @@
       float:left;
     }
   }
+}
+.event-card-contents {
+  padding: $pad;
 }
 .event-card-title {
   margin-bottom: $pad-half;

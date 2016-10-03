@@ -29,13 +29,14 @@ body.people {
 .taxonomy-people {
   .page-header-wrapper{ margin-bottom: $pad; }
   .page-header { @extend .clearfix; }
-  .field {
-     float: left;
-     clear: left;
+  .field { }
+  .field-name-field-short-description {
+    font-weight: bold;
   }
   .field-name-field-portrait {
     width: 33%;
     float:right;
+    margin-left: $pad-double;
     img { width: 100%; }
   }
   .node-media-item, .node-event { display: none; }

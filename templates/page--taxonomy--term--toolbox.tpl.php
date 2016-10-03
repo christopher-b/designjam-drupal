@@ -114,69 +114,39 @@ $topics = taxonomy_get_children($term->tid);
       <div class="toolbox-<?php echo slug($term->name); ?>">
         <?php if($topics): ?>
           <?php foreach ($topics as $tid => $topic) :?>
-            <?php
-            $media = [];
-            $media_ids = taxonomy_select_nodes($topic->tid, false);
-            foreach ($media_ids as $media_id) :
-              $media_item = new MediaItem($media_id);
-              if($media_item->media_type() == 'vimeo' && !isset($feature)) {
-                $feature = $media_item;
-                break;
-              }
-              // else {
-              //   $media[] = $media_item;
-              // }
-            endforeach;
-            ?>
             <div class="topic">
               <h2>
-                <?php print l($topic->name, url('taxonomy/term/' . $topic->tid)); ?>
+                <?php print $topic->name; ?>
               </h2>
-              <div class="topic-content">
-                <div class="grid">
-                  <?php if(isset($feature)) :?>
-                    <div class="col-1-2 feature">
-                      <?php print $feature->embed(); ?>
+              <!-- <div class="description"><?php echo $topic->description; ?></div> -->
+
+              <?php
+              // Find all Media Items attached to this topic
+              $media_ids = taxonomy_select_nodes($topic->tid, false);
+              foreach ($media_ids as $media_id) :
+                $node       = node_load($media_id);
+                $node_view  = node_view($node);
+                $media_item = new MediaItem($node);
+                ?>
+                <div class="media-item grid">
+                  <?php if($media_item->media_type() == 'vimeo'): ?>
+                    <div class="col-1-2">
+                      <?php print $media_item->embed(); ?>
                     </div>
-                  <?php endif; ?>
-                  <div class="description col-1-2"><?php echo $topic->description; ?></div>
-                  <p>
-                    <?php print l('Learn more', url('taxonomy/term/' . $topic->tid)); ?>
-                  </p>
+                  <?php endif;?>
+                  <div class="col-1-2">
+                    <?php print drupal_render($node_view); ?>
+                    <?php if($media_item->media_type() != 'vimeo'): ?>
+                      <?php print $media_item->embed(); ?>
+                      <?php // print_r($media_item);?>
+                    <?php endif;?>
+                  </div>
                 </div>
-              </div>
+              <?php endforeach;  // End MediaItem loop ?>
             </div>
-            <?php unset($feature); ?>
-          <?php endforeach; ?>
-        <?php else: ?>
-          <?php
-          $media_ids = taxonomy_select_nodes($term->tid, false);
-          foreach ($media_ids as $media_id) :
-            $node = node_load($media_id);
-            $node_view = node_view($node);
-            $media_item= new MediaItem($node);
-            ?>
-            <div class="media-item grid">
-              <?php if($media_item->media_type() == 'vimeo'): ?>
-                <div class="col-1-2">
-                  <?php print $media_item->embed(); ?>
-                </div>
-              <?php endif;?>
-              <div class="col-1-2">
-                <?php print drupal_render($node_view); ?>
-                <?php if($media_item->media_type() != 'vimeo'): ?>
-                  <?php print $media_item->embed(); ?>
-                  <?php // print_r($media_item);?>
-                <?php endif;?>
-              </div>
-            </div>
-          <?php endforeach; ?>
-
-
+          <?php endforeach; // End topics loop ?>
         <?php endif;?>
-
       </div>
-
     </section>
   </div>
 </div>

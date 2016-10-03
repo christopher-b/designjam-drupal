@@ -16,6 +16,7 @@
   img { width: 100%; }
 
   .views-field-field-portrait {
+    margin-bottom: $pad;
     // Crop from http://dabblet.com/gist/4711695
     .field-content {
       width: 100%;

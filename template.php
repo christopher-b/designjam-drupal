@@ -124,12 +124,12 @@ function designjam_preprocess_node(&$vars) {
 
   // Fix Media Item Title links
   if($vars['type'] == 'media_item') {
-    if(!empty($vars['field_attachment'])) {
-      $vars['node_url'] = file_create_url($vars['field_attachment'][LANG][0]['uri']);
-    }
-    else {
-      $vars['node_url'] = $vars['field_url'][LANG][0]['value'];
-    }
+    // if(!empty($vars['field_attachment'])) {
+    //   $vars['node_url'] = file_create_url($vars['field_attachment'][LANG][0]['uri']);
+    // }
+    // else {
+    //   $vars['node_url'] = $vars['field_url'][LANG][0]['value'];
+    // }
   }
 }
 
